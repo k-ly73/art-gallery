@@ -95,10 +95,13 @@ body {
 
 
 .bg-city {
-    background-image: url("/assets/images/background-la.jpg");
-    height: 300px;
-    width: 300px;
+    background: url("../../assets/images/background-la.jpg");
+    height: 100%;
+    width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
 
 }
 
