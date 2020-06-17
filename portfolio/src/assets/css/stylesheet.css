@@ -94,13 +94,11 @@ body {
 
 
 
-
-.background-city {
+.bg-city {
     background-image: url("/assets/images/background-la.jpg");
-    height: 100%;
-    width: 100%;
-    background-size: cover; 
-    background-attachment: fixed;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
 
 }
 
