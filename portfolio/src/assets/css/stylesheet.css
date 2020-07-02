@@ -4,6 +4,9 @@ html {
 }
 body {
     display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .text-white {
@@ -21,14 +24,25 @@ body {
     background-attachment: fixed;
 }
 
+.bg-city {
+    background: url("../../assets/images/background-la.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+
+}
 .bg-gray {
     background-color: #606060; 
     height: 100%;
     width: 100%;
     background-size: cover; 
     background-attachment: fixed;
-
+    position: absolute;
 }
+
 .bounce {
     -moz-animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
@@ -36,6 +50,7 @@ body {
 }
 .center {
     text-align: center;
+ 
 }
 
 .content {
@@ -67,6 +82,7 @@ body {
     
 }
 
+
 .fade-in-2 {
     opacity: 0;
     animation: fade-in 2s forwards;
@@ -88,16 +104,6 @@ body {
 
 
 
-.bg-city {
-    background: url("../../assets/images/background-la.jpg");
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: absolute;
-
-}
 
 .half-black {
     background-color: rgba(black, 0.5);
