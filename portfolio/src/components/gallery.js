@@ -1,40 +1,45 @@
-import React, { Component } from "react";
 
-class PhotoGallery extends Component {
-    render() {
-        return (
-            <Gallery photos = {images} onClick = {openLightbox}/>
 
-        )
-    }
-}
-export default PhotoGallery;
 
-const images = [
+export const photos = [
     {
-        src: './assets/images/Jenny1.JPG',
+        src: require('../assets/images/Jenny1.jpg'),
+        height: 4,
         width: 4,
-        height: 3
     },
 
     {
-        src: './assets/images/Jenny2.JPG',
+        src: require('../assets/images/Jenny2.jpg'),
+        height: 3,
         width: 4,
-        height: 3
     },
 
     {
-        src: './assets/images/Kevin2.jpg',
+        src: require('../assets/images/Nick1.jpg'),
+        height: 3,
         width: 4,
-        height: 3
     },
 
-    
+
+
     {
-        src: './assets/images/Nick1.JPG',
-        width: 4,
-        height: 3
+        src: require('../assets/images/Kevin1.jpg'),
+        height: 4,
+        width: 7,
     },
+
+    {
+        src: require('../assets/images/Kevin2.jpg'),
+        height: 6,
+        width: 3,
+    },
+
+ 
+
+
+
+
+
     
 ]
 
