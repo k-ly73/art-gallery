@@ -1,6 +1,4 @@
 
-
-
 export const photos = [
     {
         src: require('../assets/images/Jenny1.jpg'),
@@ -34,13 +32,35 @@ export const photos = [
         width: 3,
     },
 
- 
+    {
+        src: require('../assets/images/Kevin3.jpg'),
+        height: 4,
+        width: 8,
+    },
+
+    {
+        src: require('../assets/images/Kevin4.jpg'),
+        height: 4,
+        width: 7,
+    },
+
+    {
+        src: require('../assets/images/CPPSquad1.jpg'),
+        height: 4,
+        width: 6,
+    },
+
+    {
+        src: require('../assets/images/CPPSquad2.jpg'),
+        height: 6,
+        width: 8,
+    },
 
 
 
 
 
     
-]
+];
 
 

@@ -23,7 +23,7 @@ class PortfolioPage extends Component {
                             </div>
                         </div>
 
-                        <div className = "row">
+                        <div className = "container">
                             <div style={{width: "100%"}} >
                                 <Gallery photos = {photos} />
                             </div>
