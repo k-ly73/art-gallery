@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {photos} from "./gallery.js";
-import Gallery from "react-photo-gallery";
+import PhotoGallery from "./gallery.js";
+
 
 class PortfolioPage extends Component {
     render() {
@@ -23,11 +23,10 @@ class PortfolioPage extends Component {
                             </div>
                         </div>
 
-                        <div className = "container">
-                            <div style={{width: "100%"}} >
-                                <Gallery photos = {photos} />
-                            </div>
-                        </div>
+                        <PhotoGallery>
+
+                        </PhotoGallery>
+                      
                     </div>
                 </body>
                 

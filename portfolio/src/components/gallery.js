@@ -1,5 +1,30 @@
+import React, { Component, useState, useCallback } from "react";
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
 
-export const photos = [
+class PhotoGallery extends Component {
+    render() {
+        
+        const [currentImage, setCurrentImage] = useState(0);
+        const [viewerIsOpen, setViewerIsOpen] = useState(false);
+        const openLightbox = useCallback((event, { photo, index }) => {
+            setCurrentImage(index);
+            setViewerIsOpen(true);
+        }, []);
+        return (
+            <div className = "container">
+                <Gallery photos = {photos} />
+                <ModalGateway>
+                    
+                    
+                </ModalGateway>
+            </div>
+        )
+    }    
+}
+export default PhotoGallery
+
+const photos = [
     {
         src: require('../assets/images/Jenny1.jpg'),
         height: 4,
@@ -8,8 +33,8 @@ export const photos = [
 
     {
         src: require('../assets/images/Jenny2.jpg'),
-        height: 3,
-        width: 4,
+        height: 4,
+        width: 6,
     },
 
     {
@@ -18,11 +43,9 @@ export const photos = [
         width: 4,
     },
 
-
-
     {
         src: require('../assets/images/Kevin1.jpg'),
-        height: 4,
+        height: 5,
         width: 7,
     },
 
@@ -34,13 +57,13 @@ export const photos = [
 
     {
         src: require('../assets/images/Kevin3.jpg'),
-        height: 4,
+        height: 5,
         width: 8,
     },
 
     {
         src: require('../assets/images/Kevin4.jpg'),
-        height: 4,
+        height: 5,
         width: 7,
     },
 
@@ -56,6 +79,17 @@ export const photos = [
         width: 8,
     },
 
+    {
+        src: require('../assets/images/CPPSquad2.jpg'),
+        height: 6,
+        width: 8,
+    },
+
+    {
+        src: require('../assets/images/CPPSquad2.jpg'),
+        height: 6,
+        width: 8,
+    },
 
 
 
