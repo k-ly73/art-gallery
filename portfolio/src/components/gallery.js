@@ -98,6 +98,19 @@ const photos = [
         width: 9,
     },
 
+    {
+        src: require('../assets/images/Jenn1.jpg'),
+        height: 3,
+        width: 5,
+    },
+
+    {
+        src: require('../assets/images/Kevin5.jpg'),
+        height: 3,
+        width: 6,
+    },
+
+
 
 
 
