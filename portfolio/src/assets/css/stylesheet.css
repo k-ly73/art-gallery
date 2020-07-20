@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+
+
 html {
     scroll-behavior: smooth;
     overflow: overlay;
@@ -17,7 +20,7 @@ body {
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: gradient 15s ease infinite; 
-    height: 320%;
+    height: 100%;
     width: 100%;
     position: absolute;
     display: flex;
@@ -103,11 +106,6 @@ body {
 }
 
 
-
-
-.half-black {
-    background-color: rgba(black, 0.5);
-}
 .pop-in {
     animation: pop-in 1s ease-out forwards;
 }

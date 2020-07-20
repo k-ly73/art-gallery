@@ -38,23 +38,22 @@ export default PhotoGallery
 
 const photos = [
     {
-        src: require('../assets/images/Jenny1.jpg'),
-        height: 4,
+        src: require('../assets/images/peters-canyon-park.jpg'),
+        height: 7,
         width: 6,
     },
 
     {
-        src: require('../assets/images/Jenny2.jpg'),
-        height: 4,
-        width: 6,
-    },
-
-    {
-        src: require('../assets/images/Nick1.jpg'),
-        height: 3,
+        src: require('../assets/images/turtle-rock-hill.jpg'),
+        height: 5,
         width: 4,
     },
 
+    {
+        src: require('../assets/images/Kevin5.jpg'),
+        height: 3,
+        width: 6,
+    },
     {
         src: require('../assets/images/Kevin1.jpg'),
         height: 5,
@@ -72,6 +71,24 @@ const photos = [
         src: require('../assets/images/Kevin4.jpg'),
         height: 5,
         width: 7,
+    },
+
+    {
+        src: require('../assets/images/Jenny1.jpg'),
+        height: 4,
+        width: 6,
+    },
+
+    {
+        src: require('../assets/images/Jenny2.jpg'),
+        height: 4,
+        width: 6,
+    },
+
+    {
+        src: require('../assets/images/Nick1.jpg'),
+        height: 3,
+        width: 4,
     },
 
     {
@@ -103,18 +120,6 @@ const photos = [
         height: 3,
         width: 5,
     },
-
-    {
-        src: require('../assets/images/Kevin5.jpg'),
-        height: 3,
-        width: 6,
-    },
-
-
-
-
-
-    
 ];
 
 
