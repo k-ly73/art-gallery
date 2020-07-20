@@ -9,7 +9,7 @@ class App extends Component {
         <React.Fragment>
           <Router>
             <Switch>
-              <Route exact path ="/home" eact component = {HomePage} />
+              <Route exact path ="/home" exact component = {HomePage} />
               <Route exact path = "/portfolio" exact component = {PortfolioPage} />
             </Switch>
           </Router>
@@ -17,8 +17,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
