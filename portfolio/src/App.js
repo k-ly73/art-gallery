@@ -9,12 +9,11 @@ class App extends Component {
         <React.Fragment>
           <Router>
             <Switch>
-              <Route exact path ="/home" exact component = {HomePage} />
-              <Route exact path = "/portfolio" exact component = {PortfolioPage} />
+              <Route exact path ="/" component = {HomePage} />
+              <Route exact path = "/portfolio" component = {PortfolioPage} />
             </Switch>
           </Router>
         </React.Fragment>
     );
   }
-}
-export default App;
+} export default App;
