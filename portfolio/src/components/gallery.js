@@ -51,28 +51,11 @@ const photos = [
     },
 
     {
-        src: require('../assets/images/Kevin5.jpg'),
-        height: 3,
+        src: require('../assets/images/getty-center-1.jpg'),
+        height: 4,
         width: 6,
     },
-    {
-        src: require('../assets/images/Kevin1.jpg'),
-        height: 5,
-        width: 7,
-    },
 
-
-    {
-        src: require('../assets/images/Kevin3.jpg'),
-        height: 5,
-        width: 8,
-    },
-
-    {
-        src: require('../assets/images/Kevin4.jpg'),
-        height: 5,
-        width: 7,
-    },
 
     {
         src: require('../assets/images/Jenny1.jpg'),
@@ -87,15 +70,21 @@ const photos = [
     },
 
     {
-        src: require('../assets/images/Nick1.jpg'),
-        height: 3,
-        width: 4,
+        src: require('../assets/images/krystal1.jpg'),
+        height: 4,
+        width: 6,
     },
 
     {
-        src: require('../assets/images/CPPSquad1.jpg'),
+        src: require('../assets/images/Nick1.jpg'),
         height: 4,
         width: 6,
+    },
+
+    {
+        src: require('../assets/images/francine1.jpg'),
+        height: 5,
+        width: 8,
     },
 
     {
@@ -114,6 +103,12 @@ const photos = [
         src: require('../assets/images/Nick3.jpg'),
         height: 6,
         width: 9,
+    },
+
+    {
+        src: require('../assets/images/Howard&Petrina.jpg'),
+        height: 4,
+        width: 6,
     },
 
     {

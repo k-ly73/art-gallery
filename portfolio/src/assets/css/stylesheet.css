@@ -37,6 +37,14 @@ body {
     position: absolute;
 
 }
+
+
+/* react-images fixing image view size */
+.react-images__view-image {
+    max-height: 100vh !important;
+}
+
+
 .bg-gray {
     background-color: #606060; 
     height: 100%;
