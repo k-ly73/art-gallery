@@ -45,6 +45,12 @@ const photos = [
     },
 
     {
+        src: require('../assets/images/bel-air-sunset.jpg'),
+        height: 5,
+        width: 4,
+    },
+
+    {
         src: require('../assets/images/turtle-rock-hill.jpg'),
         height: 5,
         width: 4,
@@ -76,9 +82,9 @@ const photos = [
     },
 
     {
-        src: require('../assets/images/Nick1.jpg'),
-        height: 4,
-        width: 6,
+        src: require('../assets/images/Nick1.JPG'),
+        height: 5,
+        width: 7,
     },
 
     {
@@ -90,7 +96,7 @@ const photos = [
     {
         src: require('../assets/images/CPPSquad2.jpg'),
         height: 6,
-        width: 8,
+        width: 9,
     },
 
     {

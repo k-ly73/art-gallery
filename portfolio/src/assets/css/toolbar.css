@@ -1,12 +1,8 @@
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     height: 80px;
-    margin-top: 30px;
-}
+    margin-top: 20px;
 
+}
 
 header * {
     display: inline;
@@ -16,7 +12,8 @@ header li {
     margin: 20px;
 }
 
-a:link {
+a, a:link, a:visited {
     color: white;
+    text-decoration: none;
     
 }
