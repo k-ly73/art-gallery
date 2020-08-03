@@ -8,7 +8,7 @@ class PortfolioPage extends Component {
             <div className = "App">
                 <body>
                     <div className = "container-fluid">
-                        <div className = "row">
+                        <div className = "row text-center">
                             <div className = "col-md-4">
 
                             </div>

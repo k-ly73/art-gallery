@@ -1,15 +1,10 @@
-header {
-    height: 80px;
-    margin-top: 20px;
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
 
-}
-
-header * {
-    display: inline;
-}
-
-header li {
-    margin: 20px;
+.wrapper {
+    height: auto;
+    min-height: 100%;
+    margin: 0px auto;
+    padding: 0px auto;
 }
 
 a, a:link, a:visited {
@@ -17,3 +12,11 @@ a, a:link, a:visited {
     text-decoration: none;
     
 }
+
+.nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-family: 'Tangerine', san-serif;
+}
+

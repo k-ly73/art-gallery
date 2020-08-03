@@ -122,6 +122,12 @@ const photos = [
         height: 3,
         width: 5,
     },
+
+    {
+        src: require('../assets/images/James1.jpg'),
+        height: 6,
+        width: 9,
+    },
 ];
 
 
