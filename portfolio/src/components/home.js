@@ -4,31 +4,7 @@ import ToolBar from './toolbar.js';
 import anime from "animejs";
 
 class HomePage extends Component {
-    
-    animation() {
-        
-        anime.timeline({loop: true})
-            .add({
-                targets: '.header',
-                opacity: [0, 1],
-                translateX: [40, 0],
-                translateZ: 0,              
-                easing: "easeOutExpo",
-                duration: 1400,
-                delay:(el, i) => 300 + 30 * i
-            })
-            .add({
-                targets: '.header',
-                opacity: [1, 0],
-                translateX: [0, -40],
-                translateZ: 0,
-                easing: "easeInExpo",
-                duration: 1200,
-                delay:(el, i) => 300 + 30 * i
-            })
-
-    }
-
+  
     render() {
         return (
             <div className = "App">
