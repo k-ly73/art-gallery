@@ -1,27 +1,31 @@
 import React, {Component} from "react";
-
+import ToolBar from './toolbar.js';
+import MyForm from './form.js'
 class ContactPage extends Component {
     render() {
         return (
-
-            <div className = "container-fluid">
-                
-                <div className = "row center">
-                    <div className = "col-sm-4">
-
-                    </div>
-                    <div className = "col-sm-4">
-                        Sorry! There's nothing displayed here at the moment. 
-                        The Contact page is currently undergoing changes but check
-                        back later for updates
-                    </div>
-                    <div className = "col-sm-4">
+            <div className = "App">
+                <div className = "bg-gray">
+                    <ToolBar></ToolBar>
+            
+                    <div className = "container-fluid">
                         
+                        <div className = "row center">
+                            <div className = "col-sm-4">
+
+                            </div>
+                            <div className = "col-sm-4">
+                                <MyForm>
+
+                                </MyForm>
+                            </div>
+                            <div className = "col-sm-4">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-  
         )
     }
 } 

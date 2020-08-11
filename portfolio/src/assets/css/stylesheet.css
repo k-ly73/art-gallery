@@ -90,8 +90,13 @@ body {
     animation-delay: 1s;
     
 }
+.nav-item {
+    margin-left: 30px;
+    margin-right: 30px;
+}
 
 
+/* Animations */
 .fade-in-2 {
     opacity: 0;
     animation: fade-in 2s forwards;
