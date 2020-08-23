@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import ToolBar from './toolbar.js';
-import anime from "animejs";
+
 
 class HomePage extends Component {
   
@@ -10,12 +10,11 @@ class HomePage extends Component {
             <div className = "App">
                 <div className = "bg-city">
                     <ToolBar></ToolBar>
-                    <div className = "container-fluid">
-                        
-                        <div className = "row text-center text-white">
+                    <div className = "container-fluid">  
+                        <div className = "row">
                             <div className = "col-md-12" style ={{marginTop: "100px"}}>
-                                <h1 className = "header">
-                                    <span className = "letters">A Life in the City</span>
+                                <h1>
+                                    A Life in the City
                                 </h1>
                                 <p style={{margin: "50px"}}>A Photography Album By Kevin</p>
                             </div>

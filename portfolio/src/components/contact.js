@@ -1,31 +1,21 @@
 import React, {Component} from "react";
+import '../assets/css/form.css';
 import ToolBar from './toolbar.js';
 import MyForm from './form.js'
 class ContactPage extends Component {
     render() {
         return (
-            <div className = "App">
-                <div className = "bg-gray">
-                    <ToolBar></ToolBar>
-            
-                    <div className = "container-fluid">
-                        
-                        <div className = "row center">
-                            <div className = "col-sm-4">
-
-                            </div>
-                            <div className = "col-sm-4">
-                                <MyForm>
-
-                                </MyForm>
-                            </div>
-                            <div className = "col-sm-4">
-                                
-                            </div>
-                        </div>
+            <div className = "page-wrapper bg-light-colors p-t-180">                     
+                <ToolBar></ToolBar>     
+                <div className = "container-fluid">
+                    
+                    <div className = "row">
+                        <MyForm></MyForm>
                     </div>
-                </div>
+                </div> 
             </div>
+
+     
         )
     }
 } 

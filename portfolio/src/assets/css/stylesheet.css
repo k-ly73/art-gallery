@@ -27,7 +27,7 @@ body {
 }
 
 .bg-city {
-    background: url("../../assets/images/background-la.jpg");
+    background: url("../../assets/images/getty-center-1.jpg");
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -43,15 +43,6 @@ body {
     max-height: 100vh !important;
 }
 
-
-.bg-gray {
-    background-color: #606060; 
-    height: 100%;
-    width: 100%;
-    background-size: cover; 
-    background-attachment: fixed;
-    position: absolute;
-}
 
 .bounce {
     -moz-animation: bounce 2s infinite;
@@ -72,11 +63,11 @@ body {
 .dscrptn {
     font-size: 30px;
 }
-.header {
-    font-size: 3.2em;
-    font-weight: 200;
 
-}
+ h1 {
+    font-size: 60px;
+    font-weight: 900
+ }
 
 .header-2 {
     font-size: 30px;

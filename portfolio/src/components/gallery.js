@@ -64,13 +64,13 @@ const photos = [
 
 
     {
-        src: require('../assets/images/Jenny1.jpg'),
+        src: require('../assets/images/Jenny1.JPG'),
         height: 4,
         width: 6,
     },
 
     {
-        src: require('../assets/images/Jenny2.jpg'),
+        src: require('../assets/images/Jenny2.JPG'),
         height: 4,
         width: 6,
     },
