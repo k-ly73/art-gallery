@@ -7,17 +7,11 @@ class PortfolioPage extends Component {
             <div className = "App">
                 
                 <body>
-                    <div className = "container-fluid">
-                        <ToolBar></ToolBar>
-                        <div className = "row text-center">
-                            <div className = "col-md-12">
-                                <div className = "header">
-                                    Album
-                                </div>
-                                
-                            </div>
-                         
-                        </div>
+                    
+                    <ToolBar></ToolBar>
+                    <div className = "container gallery-wrapper">
+                        
+                        
                         <PhotoGallery>
 
                         </PhotoGallery>      

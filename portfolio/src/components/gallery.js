@@ -70,13 +70,13 @@ const photos = [
     },
 
     {
-        src: require('../assets/images/Jenny2.JPG'),
+        src: require('../assets/images/Jenny3.jpg'),
         height: 4,
         width: 6,
     },
-
+    
     {
-        src: require('../assets/images/krystal1.jpg'),
+        src: require('../assets/images/Jenny5.jpg'),
         height: 4,
         width: 6,
     },
@@ -125,6 +125,12 @@ const photos = [
 
     {
         src: require('../assets/images/James1.jpg'),
+        height: 6,
+        width: 9,
+    },
+
+    {
+        src: require('../assets/images/James2.jpg'),
         height: 6,
         width: 9,
     },

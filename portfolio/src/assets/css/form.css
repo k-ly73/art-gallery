@@ -25,12 +25,12 @@ body {
 }
 
 .form-card {
-    width: auto;
-    height: auto;
     padding: 10px;
     border-radius: 20px;
     box-sizing: border-box;
     background: white;
+    position: absolute;
+    margin-left: 40%;
 }
 
 span {

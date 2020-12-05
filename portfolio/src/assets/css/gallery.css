@@ -1,0 +1,19 @@
+/* Portrait and Landscape */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3) { 
+    .react-images__view-image {
+        max-height: 100vh !important;
+    }
+
+    .container {
+        max-width: 100vh !important;
+    }
+
+}
+
+
+.react-photo-gallery--gallery > div{
+    align-self: flex-start;
+}
