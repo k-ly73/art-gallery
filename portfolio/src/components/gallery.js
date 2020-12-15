@@ -16,7 +16,7 @@ function PhotoGallery() {
         setViewerIsOpen(false);
     }
     return (
-        <div className = "container">
+        <div>
             <Gallery photos = {photos} onClick ={openLightbox}/>
             <ModalGateway>
                 {viewerIsOpen? (

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import '../assets/css/toolbar.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faComments, faBookOpen, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 class ToolBar extends Component { 

@@ -4,6 +4,8 @@ import HomePage  from './components/home.js';
 import PortfolioPage from './components/portfolio.js';
 import AboutPage from './components/about.js';
 import ContactPage from './components/contact.js';
+
+
 class App extends Component {
   render() {
     return (

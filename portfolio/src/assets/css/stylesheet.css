@@ -37,13 +37,6 @@ body {
 
 }
 
-
-/* react-images fixing image view size */
-.react-images__view-image {
-    max-height: 100vh !important;
-}
-
-
 .bounce {
     -moz-animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
