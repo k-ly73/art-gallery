@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import PhotoGallery from "./gallery.js";
-import ToolBar from './toolbar.js';
-import Title from "./title.js";
-import UploadForm from "./UploadForm.js";
+import PhotoGallery from "./gallery";
+import ToolBar from './toolbar';
+import Title from "./title";
+import UploadForm from "./UploadForm";
+import ImageGrid from './ImageGrid';
 class PortfolioPage extends Component {
     render() {
         return (
@@ -24,9 +25,9 @@ class PortfolioPage extends Component {
             // </div>
             <div className = "App">
                 <Title/>
-                <UploadForm>
-
-                </UploadForm>
+                <UploadForm />
+                <ImageGrid />
+                
             </div>
         )
     }

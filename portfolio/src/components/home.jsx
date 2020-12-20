@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css';
-import ToolBar from './toolbar.js';
+import ToolBar from './toolbar';
 
 
 class HomePage extends Component {

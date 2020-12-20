@@ -5,7 +5,7 @@ const Title = () => {
         <div className = "title">
             <h1>Kevin Ly</h1>
             <h2>Picture Albums</h2>
-            <p>Ascii Aasasas adklfjfkldjf </p>
+            <p>Upload Photos Here</p>
             
         </div>
     )

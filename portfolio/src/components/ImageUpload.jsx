@@ -74,7 +74,7 @@ class ImageUpload extends Component {
                     
                     </div>
                     <div className = "row">
-                    <img src = {this.state.url || 'https://via.placeholder.com/300x400'} alt="Uploaded images" height = "300" width = "400"/>
+                        <img src = {this.state.url || 'https://via.placeholder.com/300x400'} alt="Uploaded images" height = "300" width = "400"/>
                     </div>
                 
                     

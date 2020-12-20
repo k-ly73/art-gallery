@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import '../assets/css/form.css';
-import ToolBar from './toolbar.js';
-import MyForm from './form.js'
+import ToolBar from './toolbar.jsx';
+import MyForm from './form.jsx'
 class ContactPage extends Component {
     render() {
         return (
