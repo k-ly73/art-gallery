@@ -1,35 +1,26 @@
-import React, { Component } from "react";
-import PhotoGallery from "./gallery";
+import React from "react";
 import ToolBar from './toolbar';
 import Title from "./title";
 import UploadForm from "./UploadForm";
 import ImageGrid from './ImageGrid';
-class PortfolioPage extends Component {
-    render() {
-        return (
-            // <div className = "App">
-                
-            //     <body>
-                    
-            //         <ToolBar></ToolBar>
-            //         <div className = "container gallery-wrapper" style ={{marginTop: '100px'}}>
-                        
-            
-            //             <PhotoGallery>
+function PortfolioPage() {
 
-            //             </PhotoGallery>      
-            //         </div>
-            //     </body>
-                
-                 
-            // </div>
-            <div className = "App">
-                <Title/>
-                <UploadForm />
+   
+
+    return (
+
+        <div>
+        
+            <ToolBar/>
+            <Title/>
+            <UploadForm />
+            <div>
                 <ImageGrid />
-                
             </div>
-        )
-    }
+            
+
+        </div>
+    )
+
 }
 export default PortfolioPage

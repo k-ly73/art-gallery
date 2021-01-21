@@ -21,7 +21,7 @@ body{
   letter-spacing: 2px;
   font-weight: normal;
 }
-.title h2, .title p{
+.title h1, h2, .title p{
   text-align: center;
 }
 .title h2{
@@ -39,14 +39,14 @@ label input{
   width: 0;
   opacity: 0;
 }
-label{
+label {
   display: block;
   width: 30px;
   height: 30px;
   border: 1px solid var(--primary);
   border-radius: 50%;
   margin: 10px auto;
-  line-height: 30px;
+  line-height: 10px;
   color: var(--primary);
   font-weight: bold;
   font-size: 24px;
@@ -72,14 +72,14 @@ label:hover{
 
 /* image grid styles */
 .img-grid{
-  margin: 20px auto;
+  margin-left: 10%;
+  margin-right: 10%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
 }
 .img-wrap{
   overflow: hidden;
-  height: 0;
   padding: 50% 0;
   /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
@@ -88,8 +88,7 @@ label:hover{
 .img-wrap img{
   min-width: 100%;
   min-height: 100%;
-  max-width: 150%;
-  max-height: 150%;
+  max-width: 100%;
   position: absolute;
   top: 0;
   left: 0;
