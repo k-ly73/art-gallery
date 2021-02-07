@@ -58,6 +58,7 @@ label:hover{
 .output{
   height: 60px;
   font-size: 0.8rem;
+  
 }
 .error{
   color: var(--error);
@@ -67,7 +68,7 @@ label:hover{
 .progress-bar{
   height: 5px;
   background: var(--primary);
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* image grid styles */
@@ -80,7 +81,7 @@ label:hover{
 }
 .img-wrap{
   overflow: hidden;
-  padding: 50% 0;
+  padding: 35% 0;
   /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
   opacity: 0.8;
@@ -89,6 +90,7 @@ label:hover{
   min-width: 100%;
   min-height: 100%;
   max-width: 100%;
+  max-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -111,3 +113,20 @@ label:hover{
   box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
   border: 3px solid white;
 }
+
+/*
+    Extra small devices < 576px
+    No media query required
+
+    Small (sm) 576px and up
+    @media (min-width: 576px){ ... }
+
+    Medium (md) tablets 768px and up
+    @media (min-width: 768px){ ... }
+
+    Large (lg) desktops 992px and up
+    @media (min-width: 992px){ ... }
+
+    Extra Large (xl) large desktops 1200px and up
+    @media (min-width: 1200px){ ... }
+*/

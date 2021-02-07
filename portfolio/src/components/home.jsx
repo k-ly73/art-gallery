@@ -1,35 +1,34 @@
 import React, {Component} from 'react';
 import '../App.css';
 import ToolBar from './toolbar';
-
+import '../assets/css/home.css';
 
 class HomePage extends Component {
   
     render() {
         return (
             <div className = "App">
-                <div className = "bg-city">
-                    <ToolBar></ToolBar>
-                    <div className = "container-fluid">  
-                        <div className = "row">
-                            <div className = "col-md-12" style ={{marginTop: "100px"}}>
-                                <h1>
-                                    A Life in the City
-                                </h1>
-                                <p style={{margin: "50px"}}>A Photography Album By Kevin</p>
-                            </div>
+                        
+                <ToolBar/>
+                <div className = "container-fluid">  
+                    <div className = "row" style ={{marginTop: "300px"}}>
+                        <div className = "col-md-6">
+                            <h1>PhotoBom</h1>
+                            <p style={{margin: "50px"}}>A Social Media App</p>
                         </div>
-                    </div>
-                    <div className = "container-fluid">
-                        <div class = "row">
+                        <div className = "col-md-6">
+                            
 
                         </div>
                     </div>
                 </div>
-
-
+            
+        
+            
         
             </div>
+         
+           
            
         );
     }

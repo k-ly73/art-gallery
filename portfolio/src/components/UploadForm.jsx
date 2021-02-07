@@ -15,6 +15,7 @@ const UploadForm = () => {
         if(selected && types.includes(selected.type)) {
             setFile(selected);
             setError('');
+
         }
         else {
             setFile(null);
@@ -22,18 +23,18 @@ const UploadForm = () => {
         }
     };
 
+
     return ( 
         <div>
             <form>
                 <label>
                     <input type = "file" onChange={handleChange} />
-                    <span>+</span>
                 </label>
             
                 <div className = "output">
                     { error && <div className = "error">{ error }</div>} 
                     { file && <div>{ file.name }</div> }
-                    { file && <ProgressBar file = {file} setFile = {setFile} /> }
+                    { file && <ProgressBar file = {file} setFile = {setFile} /> }       
                 </div>
             </form>
 

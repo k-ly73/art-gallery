@@ -5,7 +5,7 @@ import UploadForm from "./UploadForm";
 import ImageGrid from './ImageGrid';
 function PortfolioPage() {
 
-   
+
 
     return (
 
@@ -14,9 +14,8 @@ function PortfolioPage() {
             <ToolBar/>
             <Title/>
             <UploadForm />
-            <div>
-                <ImageGrid />
-            </div>
+            <ImageGrid />
+            
             
 
         </div>

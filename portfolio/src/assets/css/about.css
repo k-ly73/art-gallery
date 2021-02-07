@@ -45,6 +45,13 @@ h2 {
     
 }
 
+.mg-t-100 {
+    margin-top: 100px;
+}
+
+.pd-t-100 {
+    padding: 100px;
+}
 .center {
     display: block;
     margin-left: auto;
@@ -59,8 +66,6 @@ h2 {
     background: rgb(118, 180, 118);
 }
 
-
-
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -69,3 +74,4 @@ h2 {
         opacity: 1;
     }
 }
+
