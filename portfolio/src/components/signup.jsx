@@ -28,57 +28,57 @@ const SignUp = () => {
 
     return (
         <div>
-            <h1 className = "text-center">Sign Up</h1>
+            <h1 className="text-center">Sign Up</h1>
             <div>
                 {error !== null && (
                     <div> { error } </div>
                 )}
             </div>
-            <form className = "">
-                <label htmlFor ="displayName">Display Name: </label>
+            <form className="">
+                <label htmlFor="displayName">Display Name: </label>
                 <input 
-                    type = "text" 
-                    name = "displayName"
-                    value = {displayName}
-                    id ="displayName" 
-                    placeholder = ""
-                    onChange = {event => onChangeHandler(event)}
+                    type="text" 
+                    name="displayName"
+                    value={displayName}
+                    id="displayName" 
+                    placeholder=""
+                    onChange={event => onChangeHandler(event)}
                 />
                 <label htmlFor ="userEmail">Email: </label>
                 <input 
-                    type = "email" 
-                    name = "userEmail"
-                    value = {email}
+                    type ="email" 
+                    name ="userEmail"
+                    value ={email}
                     id ="userEmail" 
-                    placeholder = ""
-                    onChange = {event => onChangeHandler(event)}
+                    placeholder=""
+                    onChange={event => onChangeHandler(event)}
                 />
                 <label htmlFor ="userPassword">Display Name: </label>
                 <input 
-                    type = "password" 
-                    name = "userPassword"
-                    value = {password}
-                    id ="userPassword"
-                    placeholder = "" 
-                    onChange = {event => onChangeHandler(event)}
+                    type="password" 
+                    name="userPassword"
+                    value={password}
+                    id="userPassword"
+                    placeholder="" 
+                    onChange={event => onChangeHandler(event)}
                 />
                 <button
-                    className = "btn btn-success"
-                    onClick = {event => {
+                    className="btn btn-success"
+                    onClick={event => {
                         createUserWithEmailAndPassswordHandler(event, email, password)
                     }}
                 >
                     Sign Up
                 </button>
             </form>
-            <p className = "my-3">or</p>
+            <p className="my-3">or</p>
             <button 
-                className = "bg-red-500 w-full py-2 text-white"
+                className="bg-red-500 w-full py-2 text-white"
             >
                 Sign In with Google
             </button>
             <p>Already have an account? {" "} </p>
-            <Link to = "/" className= "">
+            <Link to = "/" className="">
                 Sign in here
             </Link>
             
