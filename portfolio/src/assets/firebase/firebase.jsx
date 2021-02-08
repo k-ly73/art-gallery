@@ -14,7 +14,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
+  const provider = new firebase.auth.GoogleAuthProvider();
   const projectStorage = firebase.storage();
   const projectFirestore = firebase.firestore();
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
