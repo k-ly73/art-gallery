@@ -1,4 +1,8 @@
-
+import React from "react";
+import {Router} from "@reach/router";
+import SignIn from "./signin";
+import SignUp from "./signup";
+import PasswordReset from "./passwordreset";
 
 function Application() {
     const user = null;
@@ -9,7 +13,7 @@ function Application() {
         <Router>
             <SignUp path="signup"/>
             <SignIn path="/"/>
-            <PasswordREset path="passwordReset" />
+            <PasswordReset path="passwordReset" />
         </Router>
     );
 }

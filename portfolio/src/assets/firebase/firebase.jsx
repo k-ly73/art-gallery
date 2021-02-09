@@ -19,4 +19,8 @@ var firebaseConfig = {
   const projectFirestore = firebase.firestore();
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
   
+  export const auth = firebase.auth();
+  export const signInWithGoogle = () => {
+    auth.signInWithPopUp(provider);
+  };
   export { projectStorage, projectFirestore, timestamp };

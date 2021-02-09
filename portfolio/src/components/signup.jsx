@@ -9,7 +9,7 @@ const SignUp = () => {
     const createUserWithEmailAndPassswordHandler = (event, email, password) => {
         event.preventDefault();
         setEmail("");
-        setPassworld("");
+        setPassword("");
         setDisplayName("");
     };
 

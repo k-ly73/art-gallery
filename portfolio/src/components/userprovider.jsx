@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import { auth } from "../firebase/firebase";
+import { auth } from "firebase/firebase";
 
 export const UserContext = createContext({ user: null});
 
@@ -19,6 +19,7 @@ class UserProvider extends Component {
             <UserContext.Provider value={this.state.user}>
                 {this.props.children}
             </UserContext.Provider>
+
         )
     }
 }
