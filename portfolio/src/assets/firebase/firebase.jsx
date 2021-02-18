@@ -39,6 +39,20 @@ var firebaseConfig = {
         console.error("Error in creating user document", error);
       }
     }
+    return generateUserDocument(user.uid);
+  };
+  const getUserDocument = async uid => {
+    if(!uid) return null;
+    try {
+      const userDocument = await firestore.doc(`users/$uid`).get();
+      return {
+        uid,
+        ...userDocument.data()
+      };
+    }
+    catch(error){
+      console.error("Error fetching user", error);
+    }
   }
   export const signInWithGoogle = () => {
     auth.signInWithPopUp(provider);
