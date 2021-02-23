@@ -8,11 +8,11 @@ import ProfilePage from "./profilepage";
 function Application() {
     const user = null;
     return (
-        user ?
-        <ProfilePage />
+         user ?
+         <ProfilePage />
         : 
         <Router>
-            <SignUp path="/signup"/>
+            <SignUp path="signup"/>
             <SignIn path="/"/>
             <PasswordReset path="passwordReset" />
         </Router>
