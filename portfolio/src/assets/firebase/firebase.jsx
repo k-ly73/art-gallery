@@ -39,7 +39,7 @@ var firebaseConfig = {
         console.error("Error in creating user document", error);
       }
     }
-    return generateUserDocument(user.uid);
+    return getUserDocument(user.uid);
   };
   const getUserDocument = async uid => {
     if(!uid) return null;
@@ -52,10 +52,10 @@ var firebaseConfig = {
     }
     catch(error){
       console.error("Error fetching user", error);
-    }
+    } 
   }
   export const signInWithGoogle = () => {
-    auth.signInWithPopUp(provider);
+    auth.signInWithPopup(provider);
   };
 
   export { projectStorage, timestamp };  
