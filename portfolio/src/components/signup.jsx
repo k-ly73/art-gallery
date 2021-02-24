@@ -76,7 +76,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     <p>or</p>
-                    <button type="button" className="btn-danger block" onClick={signInWithGoogle}>
+                    <button type="button" className="btn-danger block" onClick={() => {signInWithGoogle();}}>
                         Sign In With Google
                     </button>
                     <p>

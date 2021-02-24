@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Router} from "@reach/router";
 import SignIn from "./signin";
 import SignUp from "./signup";
 import PasswordReset from "./passwordreset";
 import ProfilePage from "./profilepage";
+import {UserContext} from './userprovider';
  
 function Application() {
-    const user = null;
+    const user = useContext(UserContext);
     return (
-         user ?
-         <ProfilePage />
+            user ?
+            <ProfilePage />
         : 
-        <Router>
-            <SignUp path="signup"/>
-            <SignIn path="/"/>
-            <PasswordReset path="passwordReset" />
-        </Router>
+            <Router>
+                <SignUp path="signup"/>
+                <SignIn path="/"/>
+                <PasswordReset path="passwordReset" />
+            </Router>
     );
 }
 

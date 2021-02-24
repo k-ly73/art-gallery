@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
 import 'firebase/auth';
-
+import {functions} from 'firebase';
 var firebaseConfig = {
   apiKey: "AIzaSyDK4l6COTGDZn0ZrLB9S925PuYtghEJTyQ",
   authDomain: "photoalbum-e6d90.firebaseapp.com",
@@ -21,6 +21,7 @@ var firebaseConfig = {
   const projectStorage = firebase.storage();
   
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
   export const generateUserDocument = async (user, additionalData) => {
     if(!user) return;  
     const userRef = firestore.doc(`users/${user.uid}`);
