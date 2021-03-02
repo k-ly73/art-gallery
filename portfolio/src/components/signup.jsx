@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Container, Alert } from "react-bootstrap"
 import { useAuth } from "../assets/contexts/auth"
+import { signInWithGoogle } from '../assets/firebase/firebase'
 import { Link, useHistory } from "react-router-dom"
 
 export default function SignUp() {
@@ -26,30 +27,39 @@ export default function SignUp() {
         setLoading(false);
     }
     return (
-        <>
-            <Card>
-                <Card.Body>
-                    <h2 className="text-center mb-4 ">Create an Account</h2>
-                    {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required />
-                        </Form.Group>
-                        <Form.Group id="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required />
-                        </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">
-                            Sign Up
-                        </Button>
-                    </Form>
-                    <div className="text-center w-100 mt-2">
-                        Already have an account? Click <Link to="/signin">here</Link> to Login
-                    </div>
-                </Card.Body>
-                
-            </Card>
-        </>
+        <div className ="bg-light-colors">
+            <Container 
+                className="d-flex align-items-center justify-content-center"
+                style={{minHeight: "100vh"}}
+            >
+                <Card>
+                    <Card.Body>
+                        <h2 className="text-center mb-4 ">Create an Account</h2>
+                        {error && <Alert variant="danger">{error}</Alert>}
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Group id="email">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" ref={emailRef} required />
+                            </Form.Group>
+                            <Form.Group id="password">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" ref={passwordRef} required />
+                            </Form.Group>
+                            <Button disabled={loading} className="w-100" type="submit">
+                                Sign Up
+                            </Button>
+                            <p>or</p>
+                            <Button className ="w-100" variant="info" type="submit" onClick={signInWithGoogle}>
+                                Sign In with Google Account
+                            </Button>
+                        </Form>
+                        <div className="text-center w-100 mt-2">
+                            Already have an account? Click <Link to="/signin">here</Link> to Login
+                        </div>
+                    </Card.Body>
+                    
+                </Card>
+        </Container>
+        </div>
     )
 }

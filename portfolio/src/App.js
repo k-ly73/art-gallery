@@ -10,23 +10,16 @@ import { AuthProvider } from './assets/contexts/auth';
 function App() {
 
   return (
-    <Container 
-        className="d-flex align-items-center justify-content-center"
-        style={{minHeight: "100vh"}}
-    >
-      <div>
-        <Router>
-          <AuthProvider>
-            <Switch>
-              <Route exact path="/"component={ProfilePage}/>
-              <Route path="/signup" component={SignUp}/>
-              <Route path="/signin" component={SignIn}/>
-            </Switch>
-          </AuthProvider>
-        </Router>
-      </div>
-     
-    </Container>
+
+    <Router>
+      <AuthProvider>
+        <Switch>
+          <Route exact path="/"component={ProfilePage}/>
+          <Route path="/signup" component={SignUp}/>
+          <Route path="/signin" component={SignIn}/>
+        </Switch>
+      </AuthProvider>
+    </Router>
 
   
 

@@ -1,30 +1,17 @@
-import React, {Component} from 'react';
-import '../App.css';
-import ToolBar from './toolbar';
-import '../assets/css/home.css';
+import React, { Component } from 'react'
+import { Container } from "react-bootstrap"
+import '../App.css'
+import ToolBar from './toolbar'
+import '../assets/css/home.css'
 
 class HomePage extends Component {
   
     render() {
         return (
-            <div className = "App">
-                <div className = "container-fluid">  
-                    <div className = "row" style ={{marginTop: "300px"}}>
-                        <div className = "col-md-6">
-                            <h1>PhotoBom</h1>
-                            <p style={{margin: "50px"}}>A Social Media App</p>
-                            <button></button>
-                        </div>
-                        <div className = "col-md-6">
-                            
+            <div>
+                <Container>
 
-                        </div>
-                    </div>
-                </div>
-            
-        
-            
-        
+                </Container>
             </div>
          
            

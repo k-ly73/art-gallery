@@ -19,7 +19,6 @@ body {
     background: linear-gradient(45deg, pink, lightblue, lightgreen);
     height: 100%;
     width: 100%;
-    position: absolute;
     display: flex;
     background-attachment: fixed;
 }
