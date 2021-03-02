@@ -1,20 +1,32 @@
 import React, { useContext } from "react";
-import {UserContext} from './userprovider';
-import { auth } from "../assets/firebase/firebase";
+import app from "../assets/firebase/firebase";
 import ToolBar from "./toolbar";
 import './../assets/css/home.css';
 const ProfilePage = () => {
-    const user = useContext(UserContext);
-    const {photoURL, displayName, email} = user;
+
     return (
-        <div className="container">
-            <ToolBar />
-            <div className="p-t-180">
-                <p> Hello {displayName}</p>
-                <p>{email}</p>
-                <p>{photoURL}</p>
+        <div>
+            <div className="container">
+                <ToolBar />
+                <div className="p-t-180 wrapper">
+                    <div className = "card mb-3">
+                        <div classname = "row no-gutters">
+                            <div className = "col-md-4">
+                                <img src=""/>
+                                     
+                            </div>
+                            <div className = "col-md-8">
+                                <div className = "card-body">
+                                    <h5 className = "card-title">{}</h5>
+                                    <p className = "card-text">{}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <button onClick ={() => {app.auth().signOut()}}>Sign Out</button>
             </div>
-            <button onClick ={() => {auth.signOut()}}>Sign Out</button>
         </div>
     )
 }

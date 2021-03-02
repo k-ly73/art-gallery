@@ -18,18 +18,6 @@ class ToolBar extends Component {
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className = "navbar-nav ml-auto">
                             <li className = "nav-item active">
-                                <a className = "nav-link" href = "/">
-                                    <FontAwesomeIcon icon = {faHome} />
-                                    <p>Home</p>
-                                </a>
-                            </li>
-                            <li className = "nav-item active">
-                                <a className = "nav-link" href = "/contact">
-                                    <FontAwesomeIcon icon = {faComments} />
-                                    <p>Contact</p>
-                                </a>
-                            </li>
-                            <li className = "nav-item active">
                                 <a className = "nav-link" href = "/portfolio">
                                     <FontAwesomeIcon icon = {faBookOpen} />
                                     <p>Collection</p>

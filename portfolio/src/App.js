@@ -1,13 +1,36 @@
 import React from 'react';
-import Application from './components/application';
-import UserProvider from './components/userprovider';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import SignIn from './components/signin';
+import SignUp from './components/signup';
+import ProfilePage from './components/profilepage';
+import PortfolioPage from './components/portfolio';
+import { AuthProvider } from './assets/contexts/auth';
 
 function App() {
 
   return (
-      <UserProvider>
-        <Application />
-      </UserProvider>
+    <Container 
+        className="d-flex align-items-center justify-content-center"
+        style={{minHeight: "100vh"}}
+    >
+      <div>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route exact path="/"component={ProfilePage}/>
+              <Route path="/signup" component={SignUp}/>
+              <Route path="/sign" component={SignIn}/>
+            </Switch>
+          </AuthProvider>
+        </Router>
+      </div>
+     
+    </Container>
+
+  
+
+
   );
   
 } export default App;

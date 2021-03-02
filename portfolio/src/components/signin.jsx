@@ -1,82 +1,57 @@
-import React, {useState} from 'react';
-import { Link } from "@reach/router";
-import { auth, signInWithGoogle } from '../assets/firebase/firebase';
-import './../assets/css/form.css';
-const SignIn = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
+import React, { useRef, useState } from 'react'
+import { Form, Button, Card, Container, Alert } from "react-bootstrap"
+import { useAuth } from "../assets/contexts/auth.jsx"
+import { Link, useHistory } from "react-router-dom"
 
-    const signInWithEmailAndPasswordHandler = (event, email, password) => {
-        event.preventDefault();
-        auth.signInWithEmailAndPassword(email, password).catch(error => {
-            setError("Error signing in with email and password");
-            console.error("Error signing in with email and password", error);
-        })
-    };
+export default function SignUp() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const { signup } = useAuth();
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
 
-    const onChangeHandler = (event) => {
-        const {name, value} = event.currentTarget;
+    async function handleSubmit(e) {
+        e.preventDefault();
 
-        if(name === 'userEmail') {
-            setEmail(value);
+
+        try {
+            setError("");
+            setLoading(true);
+            await signup(emailRef.current.value, passwordRef.current.value);
+            history.push("/");
+        } 
+        catch {
+            setError("Failed to create an account");
         }
-        else if(name === 'usePassword') {
-            setPassword(value);
-        }
+
+        setLoading(false);
     }
-
     return (
-        <div className="p-t-180 bg-light-colors text-center">
-            <div className="wrapper"> 
-                <div className="form-card">
-                <h1>Sign In</h1>
-                    {error !== null && <div>{error}</div>}
-                    <form className="">
-                        <div className = "input-group">
-
-                            <div className = "input-group">
-                                <input 
-                                    name="userEmail" 
-                                    type="email" 
-                                    placeholder="Your Email" 
-                                    onChange = {(event) => onChangeHandler(event)}
-                                required/>
-                            </div>
-
-                            <div className = "input-group">
-                                <input 
-                                    name="userPassword" 
-                                    type="password" 
-                                    placeholder="Your Password" 
-                                    onChange = {(event) => onChangeHandler(event)}
-                                required/>
-                            </div>
-
-                                            
-                            <button type="button" className="btn-success block" onClick={(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
-                                Sign in
-                            </button>
-                        </div>
-                    </form>
-                    <p>or</p>
-                    <button type="button" className="btn-danger block" onClick={() => {signInWithGoogle();}}>
-                        Sign In With Google
-                    </button>
-                    <p>
-                        Don't have an account?{" "}
-                        <br />{" "}
-                        <Link to="signup">
-                            Sign up here
-                        </Link>{" "}
-                        <br />{" "}
-                        <Link to="passwordReset">
-                            Forgot Password?
-                        </Link>
-                    </p>
-                </div>
-            </div>
-        </div>
+        <>
+            <Card>
+                <Card.Body>
+                    <h2 className="text-center mb-4 ">Login</h2>
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group id="email">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" ref={emailRef} required />
+                        </Form.Group>
+                        <Form.Group id="password">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" ref={passwordRef} required />
+                        </Form.Group>
+                        <Button disabled={loading} className="w-100 btn-success" type="submit">
+                            Sign In
+                        </Button>
+                    </Form>
+                    <div className="text-center w-100 mt-2">
+                        Don't have an account? Click <Link to="/signup">here</Link> to Sign Up
+                    </div>
+                </Card.Body>
+                
+            </Card>
+        </>
     )
 }
-export default SignIn

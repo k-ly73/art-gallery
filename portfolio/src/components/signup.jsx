@@ -1,98 +1,55 @@
-import React, {useState} from 'react';
-import { Link } from "@reach/router";
-import { auth, generateUserDocument, signInWithGoogle } from '../assets/firebase/firebase';
-const SignUp = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [displayName, setDisplayName] = useState('');
-    const [error, setError] = useState(null);
+import React, { useRef, useState } from 'react'
+import { Form, Button, Card, Container, Alert } from "react-bootstrap"
+import { useAuth } from "../assets/contexts/auth"
+import { Link, useHistory } from "react-router-dom"
 
-    const createUserWithEmailAndPassswordHandler = async (event, email, password) => {
-        event.preventDefault();
+export default function SignUp() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const { signup } = useAuth();
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+
         try {
-            const {user} = await auth.createUserWithEmailAndPassword(email, password);
-            generateUserDocument(user, {displayName});
+            setError("");
+            setLoading(true);
+            await signup(emailRef.current.value, passwordRef.current.value);
+        } 
+        catch {
+            setError("Failed to create an account");
         }
-        catch (error){
-            setError("Error signing up with email and password");
-        }
-        setEmail("");
-        setPassword("");
-        setDisplayName("");
-    };
 
-    const onChangeHandler = event => {
-        const { name, value } = event.currentTarget;
-        if(name === "userEmail") {
-            setEmail(value);
-        }
-        else if(name === "userPassword"){
-            setPassword(value);
-        }
-        else if(name === "displayName"){
-            setDisplayName(value);
-        }
-    };
-
+        setLoading(false);
+    }
     return (
-        <div className="p-t-180 bg-light-colors text-center">
-            <div className="wrapper"> 
-                <div className="form-card mb-3">
-                <h1>Create an Account</h1>
-                    {error !== null && <div>{error}</div>}
-                    <form className="">
-                        <div className="input-group">
-                            <div className="input-group">
-                                <input 
-                                    name="displayName" 
-                                    type="text" 
-                                    placeholder="Enter a Display Name" 
-                                    onChange = {(event) => onChangeHandler(event)}
-                                required/>
-                            </div>
-
-                            <div className="input-group">
-                                <input 
-                                    name="userEmail" 
-                                    type="email" 
-                                    placeholder="Enter An Email" 
-                                    onChange = {(event) => onChangeHandler(event)}
-                                required/>
-                            </div>
-
-                            <div className="input-group">
-                                <input 
-                                    name="userPassword" 
-                                    type="password" 
-                                    placeholder="Enter A Password" 
-                                    onChange = {(event) => onChangeHandler(event)}
-                                required/>
-                            </div>
-
-                                            
-                            <button type="button" className="btn-success block" onClick={(event) => {createUserWithEmailAndPassswordHandler(event, email, password)}}>
-                                Sign Up
-                            </button>
-                        </div>
-                    </form>
-                    <p>or</p>
-                    <button type="button" className="btn-danger block" onClick={() => {signInWithGoogle();}}>
-                        Sign In With Google
-                    </button>
-                    <p>
-                        Already Have an Account?{" "}
-                        <br />{" "}
-                        <Link to="/">
-                            Sign in here
-                        </Link>{" "}
-                        <br />{" "}
-                        <Link to="passwordReset">
-                            Forgot Password?
-                        </Link>
-                    </p>
-                </div>
-            </div>
-        </div>
+        <>
+            <Card>
+                <Card.Body>
+                    <h2 className="text-center mb-4 ">Create an Account</h2>
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group id="email">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" ref={emailRef} required />
+                        </Form.Group>
+                        <Form.Group id="password">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" ref={passwordRef} required />
+                        </Form.Group>
+                        <Button disabled={loading} className="w-100" type="submit">
+                            Sign Up
+                        </Button>
+                    </Form>
+                    <div className="text-center w-100 mt-2">
+                        Already have an account? Click <Link to="/signin">here</Link> to Login
+                    </div>
+                </Card.Body>
+                
+            </Card>
+        </>
     )
 }
-export default SignUp

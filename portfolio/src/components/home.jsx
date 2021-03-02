@@ -8,13 +8,12 @@ class HomePage extends Component {
     render() {
         return (
             <div className = "App">
-                        
-                <ToolBar/>
                 <div className = "container-fluid">  
                     <div className = "row" style ={{marginTop: "300px"}}>
                         <div className = "col-md-6">
                             <h1>PhotoBom</h1>
                             <p style={{margin: "50px"}}>A Social Media App</p>
+                            <button></button>
                         </div>
                         <div className = "col-md-6">
                             
