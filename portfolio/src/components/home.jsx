@@ -1,22 +1,23 @@
-import React, { Component } from 'react'
-import { Container } from "react-bootstrap"
-import '../App.css'
+import React from 'react'
+import { Container, Row, Col } from "react-bootstrap"
 import ToolBar from './toolbar'
 import '../assets/css/home.css'
 
-class HomePage extends Component {
-  
-    render() {
-        return (
-            <div>
-                <Container>
+export default function HomePage() {
 
-                </Container>
-            </div>
-         
-           
-           
-        );
-    }
+
+    return (
+        <div>
+            <Container>
+                <Col>
+
+                </Col>
+            </Container>
+        </div>
+        
+        
+        
+    );
+    
 } 
-export default HomePage
+

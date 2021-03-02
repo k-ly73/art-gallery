@@ -48,7 +48,7 @@ export default function SignUp() {
                             <Button disabled={loading} className="w-100" type="submit">
                                 Sign Up
                             </Button>
-                            <p>or</p>
+                            <p className="text-center">or</p>
                             <Button className ="w-100" variant="info" type="submit" onClick={signInWithGoogle}>
                                 Sign In with Google Account
                             </Button>

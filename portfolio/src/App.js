@@ -5,6 +5,7 @@ import SignIn from './components/signin';
 import SignUp from './components/signup';
 import ProfilePage from './components/profilepage';
 import PortfolioPage from './components/portfolio';
+import HomePage from './components/home';
 import { AuthProvider } from './assets/contexts/auth';
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
-          <Route exact path="/"component={ProfilePage}/>
+          <Route exact path="/" component={ProfilePage}/>
+          <Route path="/home" component={HomePage}/>
           <Route path="/signup" component={SignUp}/>
           <Route path="/signin" component={SignIn}/>
         </Switch>
