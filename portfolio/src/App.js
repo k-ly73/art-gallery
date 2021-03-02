@@ -20,7 +20,7 @@ function App() {
             <Switch>
               <Route exact path="/"component={ProfilePage}/>
               <Route path="/signup" component={SignUp}/>
-              <Route path="/sign" component={SignIn}/>
+              <Route path="/signin" component={SignIn}/>
             </Switch>
           </AuthProvider>
         </Router>
