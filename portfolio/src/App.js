@@ -11,7 +11,6 @@ import { AuthProvider } from './assets/contexts/auth';
 function App() {
 
   return (
-
     <Router>
       <AuthProvider>
         <Switch>
@@ -22,10 +21,6 @@ function App() {
         </Switch>
       </AuthProvider>
     </Router>
-
-  
-
-
   );
   
 } export default App;

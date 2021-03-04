@@ -7,11 +7,9 @@ export default function HomePage() {
 
 
     return (
-        <div>
+        <div className="bg-nature">
             <Container>
-                <Col>
 
-                </Col>
             </Container>
         </div>
         
