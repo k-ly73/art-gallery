@@ -8,6 +8,9 @@ html{
     overflow: hidden;
 }
 
+.text-white {
+    color: white;
+}
 .bg-nature {
     background:
         linear-gradient(
