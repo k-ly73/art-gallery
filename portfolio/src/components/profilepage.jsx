@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import app from "../assets/firebase/firebase";
+import { Button, Container, Row } from 'react-bootstrap'
 import ToolBar from "./toolbar";
 import './../assets/css/home.css';
 const ProfilePage = () => {
@@ -8,24 +9,13 @@ const ProfilePage = () => {
         <div>
             <div className="container">
                 <ToolBar />
-                <div className="p-t-180 wrapper">
-                    <div className = "card mb-3">
-                        <div classname = "row no-gutters">
-                            <div className = "col-md-4">
-                                <img src=""/>
-                                     
-                            </div>
-                            <div className = "col-md-8">
-                                <div className = "card-body">
-                                    <h5 className = "card-title">{}</h5>
-                                    <p className = "card-text">{}</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <button onClick ={() => {app.auth().signOut()}}>Sign Out</button>
+                <Container>
+                    <Row style ={{marginTop:'400px'}}>
+                        <Button variant ="danger" onClick ={() => {app.auth().signOut()}}>Sign Out</Button>
+                    </Row>
+                 
+                </Container>
+               
             </div>
         </div>
     )

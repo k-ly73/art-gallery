@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap'
+import PrivateRoute from './components/privateroute';
 import SignIn from './components/signin';
 import SignUp from './components/signup';
 import ProfilePage from './components/profilepage';
@@ -14,10 +15,11 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
-          <Route exact path="/" component={ProfilePage}/>
-          <Route path="/home" component={HomePage}/>
+          <PrivateRoute path="/portfolio" component={PortfolioPage}/>
+          <PrivateRoute exact path="/" component={ProfilePage}/>
           <Route path="/signup" component={SignUp}/>
           <Route path="/signin" component={SignIn}/>
+          <Route path="/home" component={HomePage}/>
         </Switch>
       </AuthProvider>
     </Router>

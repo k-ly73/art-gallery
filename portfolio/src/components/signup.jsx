@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Container, Alert } from "react-bootstrap"
+import { Form, Button, Card, Container, Alert, Col } from "react-bootstrap"
 import { useAuth } from "../assets/contexts/auth"
 import { signInWithGoogle } from '../assets/firebase/firebase'
 import { Link, useHistory } from "react-router-dom"
+import '../assets/css/form.css'
 
 export default function SignUp() {
     const emailRef = useRef();
@@ -27,14 +28,14 @@ export default function SignUp() {
         setLoading(false);
     }
     return (
-        <div className ="bg-light-colors">
+        <div className ="bg-nature">
             <Container 
                 className="d-flex align-items-center justify-content-center"
                 style={{minHeight: "100vh"}}
             >
                 <Card>
                     <Card.Body>
-                        <h2 className="text-center mb-4 ">Create an Account</h2>
+                        <h2 className="text-center mb-4">Create an Account</h2>
                         {error && <Alert variant="danger">{error}</Alert>}
                         <Form onSubmit={handleSubmit}>
                             <Form.Group id="email">
@@ -47,10 +48,6 @@ export default function SignUp() {
                             </Form.Group>
                             <Button disabled={loading} className="w-100" type="submit">
                                 Sign Up
-                            </Button>
-                            <p className="text-center">or</p>
-                            <Button className ="w-100" variant="info" type="submit" onClick={signInWithGoogle}>
-                                Sign In with Google Account
                             </Button>
                         </Form>
                         <div className="text-center w-100 mt-2">

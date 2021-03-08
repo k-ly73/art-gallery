@@ -16,8 +16,12 @@ export function AuthProvider({ children }) {
         return auth.createUserWithEmailAndPassword(email, password);
     }
 
+    function login(email, password) {
+        return auth.signInWithEmailAndPassword(email, password);
+    }
     const value = {
-        currentUser, 
+        currentUser,
+        login, 
         signup
     }
 

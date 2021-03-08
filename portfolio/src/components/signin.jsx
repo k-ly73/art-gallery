@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Container, Alert } from "react-bootstrap"
+import { Form, Button, Card, Container, Alert, Row, Col } from "react-bootstrap"
 import { useAuth } from "../assets/contexts/auth.jsx"
 import { Link, useHistory } from "react-router-dom"
 import '../assets/css/form.css'
-export default function SignUp() {
+
+export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { signup } = useAuth();
+    const { login } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const history = useHistory();
@@ -18,24 +19,25 @@ export default function SignUp() {
         try {
             setError("");
             setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
+            await login(emailRef.current.value, passwordRef.current.value);
             history.push("/");
         } 
         catch {
-            setError("Failed to create an account");
+            setError("Failed to Sign In");
         }
 
         setLoading(false);
     }
     return (
-        <div className ="bg-light-colors">
+        <div className ="bg-nature">
             <Container 
                 className="d-flex align-items-center justify-content-center"
                 style={{minHeight: "100vh"}}
             >
-                <Card>
+
+                <Card className="transparent">
                     <Card.Body>
-                        <h2 className="text-center mb-4 ">Login</h2>
+                        <h2 className="text-center mb-4">Login</h2>
                         {error && <Alert variant="danger">{error}</Alert>}
                         <Form onSubmit={handleSubmit}>
                             <Form.Group id="email">
@@ -47,7 +49,7 @@ export default function SignUp() {
                                 <Form.Control type="password" ref={passwordRef} required />
                             </Form.Group>
                             <Button disabled={loading} variant="success" className="w-100" type="submit">
-                                Sign In
+                                Login
                             </Button>
                         </Form>
                         <div className="text-center w-100 mt-2">
@@ -56,6 +58,7 @@ export default function SignUp() {
                     </Card.Body>
                     
                 </Card>
+
             </Container>
         </div>
     )
