@@ -1,32 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { projectStorage } from '../firebase/firebase';
-
-const useStorage = file => {
+import { useAuth } from '../../assets/contexts/auth';
+const useStorage = (file) => {
+    const { currentUser } = useAuth();
     const [progress, setProgress] = useState(0);
-    const [url, setUrl] = useState(null);
     const [error, setError] = useState(null);
+    const [url, setUrl] = useState(null);
 
-    useEffect(() => {
+    useEffect(() =>{
 
-        //references
-        const storageRef = projectStorage.ref(`images/${file.name}`);
+        const storageRef = projectStorage.ref(`images/${currentUser.email}/${file.name}`);
         storageRef.put(file).on('state_changed', (snap) => {
             let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-            setProgress(percentage);
-        },
-        (error) => {
-            setError(error);    
-
+            setProgress(percentage)
+        }, 
+        (err) => {
+            setError(err);
         },
         async () => {
             const url = await storageRef.getDownloadURL();
             setUrl(url);
         })
-
-      
-
     }, [file]);
 
-    return { progress, url, error }
+    return { progress, error, url }
 }
-export default useStorage
+
+export default useStorage;

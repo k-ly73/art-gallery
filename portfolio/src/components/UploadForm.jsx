@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProgressBar from './progressbar';
+import { Container, Button } from 'react-bootstrap';
 
 
 const UploadForm = () => {
@@ -8,8 +9,12 @@ const UploadForm = () => {
 
     const types = ['image/png', 'image/jpeg'];
    
-
+    const hiddenFileInput = React.useRef(null);
+    const handleUpload = (e) => {
+        hiddenFileInput.current.click();
+    }
     const handleChange = (e) => {
+
         let selected = e.target.files[0];
 
         if(selected && types.includes(selected.type)) {
@@ -21,24 +26,32 @@ const UploadForm = () => {
             setFile(null);
             setError('Select a jpg or png file only'); //catch exception error for non jpg/png files
         }
+
     };
 
 
     return ( 
-        <div>
+        <Container className="text-center">
             <form>
-                <label>
-                    <input type = "file" onChange={handleChange} />
-                </label>
+                <Button onClick={handleUpload}>
+                    Upload an Image
+                </Button>
+                <input 
+                    type="file" 
+                    style ={{display: 'none'}}
+                    ref={hiddenFileInput}
+                    onChange={handleChange}
+                />
             
-                <div className = "output">
-                    { error && <div className = "error">{ error }</div>} 
+                <div className>
+                    { error && <div className="error">{ error }</div>} 
                     { file && <div>{ file.name }</div> }
-                    { file && <ProgressBar file = {file} setFile = {setFile} /> }       
+                    { file && <ProgressBar file={file} setFile={setFile} /> }       
                 </div>
             </form>
+        </Container>
+    
 
-        </div>
      
     )
 }

@@ -23,12 +23,15 @@ export default function ProfilePage(){
 
     }
     return (
-        <div className="bg-light-colors">
+        <div className="bg-water">
          
             <ToolBar />
             <Container>
                 <Row className="ptb-200">
-                    <Card className="text-center" bsPrefix="bg-transparent">
+                    <Card 
+                        className="text-center text-white"
+                        bsPrefix="bg-transparent"
+                    >
                         <Card.Body>
                             <h2 className="text-center mb-4">Profile</h2>
                             {error && <Alert variant ="danger">{error}</Alert>}

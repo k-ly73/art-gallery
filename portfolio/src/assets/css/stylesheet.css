@@ -26,15 +26,9 @@ body {
     background-attachment: fixed;
 }
 
-.bg-city {
-    background: url("../../assets/images/getty-center-1.jpg");
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: absolute;
-
+.ptb-200 {
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .bounce {
@@ -57,10 +51,10 @@ body {
     font-size: 30px;
 }
 
- h1 {
-    font-size: 60px;
-    font-weight: 900
- }
+h1 {
+font-size: 60px;
+font-weight: 900
+}
 
 .header-2 {
     font-size: 30px;
