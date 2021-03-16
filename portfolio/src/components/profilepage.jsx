@@ -27,7 +27,7 @@ export default function ProfilePage(){
          
             <ToolBar />
             <Container>
-                <Row className="ptb-200">
+                <Row className="ptb-150">
                     <Card 
                         className="text-center text-white"
                         bsPrefix="bg-transparent"
