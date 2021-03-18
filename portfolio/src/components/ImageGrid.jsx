@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { projectStorage } from '../assets/firebase/firebase';
 import { useAuth } from '../assets/contexts/auth'
 import './../assets/css/gallery.css';
-const ImageGrid = () => {
+
+const ImageGrid = ({ setSelectedImg }) => {
 
     const [photos, setPhotos] = useState([]);
     const { currentUser } = useAuth();
@@ -21,7 +22,10 @@ const ImageGrid = () => {
      
         <div className = "img-grid">
             {photos.map((url, index)=> (
-                <div className = "img-wrap">
+                <div 
+                    className ="img-wrap"
+                    onClick={() => setSelectedImg(url)}
+                > 
                     <img src={url} alt="photos" key={index.toString()}/>
                 </div>
             ))}

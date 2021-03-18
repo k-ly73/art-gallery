@@ -10,6 +10,7 @@ const UploadForm = () => {
     const types = ['image/png', 'image/jpeg'];
    
     const hiddenFileInput = React.useRef(null);
+    
     const handleUpload = (e) => {
         hiddenFileInput.current.click();
     }

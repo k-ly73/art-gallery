@@ -7,7 +7,7 @@ const useStorage = (file) => {
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
 
-    useEffect(() =>{
+    useEffect(() => {
 
         const storageRef = projectStorage.ref(`images/${currentUser.email}/${file.name}`);
         storageRef.put(file).on('state_changed', (snap) => {

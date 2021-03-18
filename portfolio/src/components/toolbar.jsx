@@ -34,7 +34,7 @@ export default function ToolBar() {
                         </li>
                         <li className = "nav-item active">
                             <Link 
-                                to="/"
+                                to="/profilepage"
                                 className="text-white"
                             >
                                 <FontAwesomeIcon icon = {faMale} />
