@@ -4,8 +4,21 @@ import ToolBar from "./toolbar";
 import { useHistory } from 'react-router-dom'
 import { useAuth } from '../assets/contexts/auth'
 import './../assets/css/home.css';
+
+import withStyles from '@material-ui/core/styles/withStyles';
+// Material UI
+
+// Icons
+
+
+import Paper from '@material-ui/core'
+
 export default function ProfilePage(){
 
+    const [profilePic, setProfilePic] = useState(null);
+    const handleProfileImage = (e) => {
+        const image = event.target.files[0];
+    }
     const[error, setError] = useState("");
     const { currentUser, logout } = useAuth();
     const history = useHistory();
@@ -33,7 +46,7 @@ export default function ProfilePage(){
                         bsPrefix="bg-transparent"
                     >
                         <Card.Body>
-                            <h2 className="text-center mb-4">Profile</h2>
+                            <h2 className="text-center mb-4"></h2>
                             {error && <Alert variant ="danger">{error}</Alert>}
                             <strong>Email: </strong> {currentUser.email}
                         </Card.Body>
