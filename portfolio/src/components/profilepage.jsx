@@ -15,10 +15,10 @@ import Paper from '@material-ui/core'
 
 export default function ProfilePage(){
 
-    const [profilePic, setProfilePic] = useState(null);
-    const handleProfileImage = (e) => {
-        const image = event.target.files[0];
-    }
+    // const [profilePic, setProfilePic] = useState(null);
+    // const handleProfileImage = (e) => {
+    //     const image = event.target.files[0];
+    // }
     const[error, setError] = useState("");
     const { currentUser, logout } = useAuth();
     const history = useHistory();
