@@ -4,9 +4,11 @@ import useFirestore from '../assets/hooks/useFirestore';
 import { useAuth } from '../assets/contexts/auth'
 import './../assets/css/gallery.css';
 
+//Animation
+import { motion } from 'framer-motion';
+
 const ImageGrid = ({ setSelectedImg }) => {
 
-    const { currentUser } = useAuth();
     const { docs } = useFirestore(`images`);
     console.log(docs);
     /*
@@ -29,13 +31,20 @@ const ImageGrid = ({ setSelectedImg }) => {
      
         <div className = "img-grid">
             { docs && docs.map(doc => (
-                <div 
+                <motion.div 
+                    layout
+                    whileHover={{ scale: 1.1 }}
                     className="img-wrap" 
                     key={doc.id}
                     onClick={() => setSelectedImg(doc.url)}
                 >
-                    <img src={doc.url} alt="uploaded image"/>
-                </div>
+                    <motion.img 
+                        src={doc.url} 
+                        alt="uploaded image"
+                        initial={{ opacity: 0}}
+                        animate={{ opacity: 1}}
+                    />
+                </motion.div>
             ))}
 
             {/* {photos.map((url, index)=> (

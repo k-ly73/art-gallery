@@ -1,51 +1,33 @@
 
-body {
-    display: block;
-}
-
-.block {
-    display: block;
-    width: 100%;
-    border: none;
-    padding: 14px 28px;
-    font-size: 16px;
-    text-align: center;
-}
 .bg-light-colors {
     background: linear-gradient(45deg, pink, lightblue, lightgreen);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    min-height: 100vh;
     width: 100%;
 }
 
 .bg-library {
     background:
         linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.8)
         ),
-        url('../../assets/images/libraryaisle.jpg');
-    background-repeat: no-repeat;
+        url('../../assets/images/libraryaisle.jpg') top right no-repeat;
     background-size: cover;
-    background-position: center center;
-    min-height: 100vh;
+    background-attachment: fixed;
+    position: absolute;
+    min-height: 100%;
     width: 100%;
+    
 }
 
+.p-50 {
+    padding: 50px;
+}
 .center {
     text-align: center;
 }
 
-.p-b-100 {
-    padding-bottom: 100px;
-}
 
-.p-t-180 {
-    padding-top: 180px;
-}
 
-.page-wrapper {
-    min-height: 100vh;
-}

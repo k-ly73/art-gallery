@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProgressBar from './progressbar';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Row, Col } from 'react-bootstrap';
 
 
 const UploadForm = () => {
@@ -44,10 +44,15 @@ const UploadForm = () => {
                     onChange={handleChange}
                 />
             
-                <div className>
-                    { error && <div className="error">{ error }</div>} 
-                    { file && <div>{ file.name }</div> }
-                    { file && <ProgressBar file={file} setFile={setFile} /> }       
+                <div className ="text-white">
+                    <Container className="p-50">
+
+                        { error && <div className="error">{ error }</div>} 
+                        { file && <div>{ file.name }</div> }
+                        { file && <ProgressBar file={file} setFile={setFile} /> }    
+                      
+                    </Container>
+   
                 </div>
             </form>
         </Container>

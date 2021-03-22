@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { auth } from '../firebase/firebase'
 
+//Firebase Refs
+import { signInWithGoogle } from '../../assets/firebase/firebase'
 
 
 const AuthContext = React.createContext();
@@ -13,7 +15,11 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     function signup(email, password){
+      
+        
         return auth.createUserWithEmailAndPassword(email, password);
+   
+
     }
 
     function login(email, password) {

@@ -6,13 +6,6 @@ a, a:link, a:visited {
     
 }
 
-nav {
-    margin: 10px;
-    padding: 10px;
-
-
-}
-
 .navbar-nav {
     flex-direction: row;
 }

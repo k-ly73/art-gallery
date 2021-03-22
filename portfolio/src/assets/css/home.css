@@ -1,20 +1,8 @@
-h1 {
-    font-size: 10px;
-}
-html{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
 
 .text-white {
     color: white; 
 }
 
-.text-white {
-    color: black;
-}
 .bg-nature {
     background:
         linear-gradient(
@@ -25,8 +13,16 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
+    position: absolute;
     min-height: 100vh;
     width: 100%;
+}
+
+.bg-white {
+    background: white;
+    background-repeat: no-repeat;
+
 }
 
 .bg-water {
@@ -39,22 +35,9 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    position: absolute;
     min-height: 100vh;
     width: 100%;
-}
-
-.p-200 {
-    padding: 200px;
-}
-
-.plr-200 {
-    padding-left: 200px;
-    padding-right: 200px;
-}
-
-.ptb-150 {
-    padding-top: 150px;
-    padding-bottom: 150px;
 }
 
 .bg-transparent {
@@ -63,4 +46,8 @@ html{
 
 .title {
     font-size: 50px;
+}
+
+.p-200 {
+    padding: 200px;
 }

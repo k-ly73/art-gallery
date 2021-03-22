@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Container, Alert, Col } from "react-bootstrap"
 import { useAuth } from "../assets/contexts/auth"
-import { signInWithGoogle } from '../assets/firebase/firebase'
 import { Link, useHistory } from "react-router-dom"
 import '../assets/css/form.css'
 
@@ -49,6 +48,7 @@ export default function SignUp() {
                             <Button disabled={loading} className="w-100" type="submit">
                                 Sign Up
                             </Button>
+
                         </Form>
                         <div className="text-center w-100 mt-2">
                             Already have an account? Click <Link to="/signin">here</Link> to Login

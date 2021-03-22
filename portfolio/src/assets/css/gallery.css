@@ -7,9 +7,6 @@
         max-height: 100vh !important;
     }
 
-    .container {
-        max-width: 100vh !important;
-    }
 
 }
 
@@ -18,15 +15,29 @@
     align-self: flex-start;
 }
 
+/* Image gallery css */
 .img-grid {
-    margin: 20px;
+    margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
 }
+
 .img-wrap {
-    overflow: hidden; 
-    opacity: 1;
+    overflow: hidden;
+    padding: 35% 0;
+    position: relative;
+
+}
+
+.img-wrap img{
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .backdrop {

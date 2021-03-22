@@ -15,6 +15,7 @@ const app = firebase.initializeApp({
 });
 
 const provider = new firebase.auth.GoogleAuthProvider();
+
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 

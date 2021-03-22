@@ -5,13 +5,12 @@ import { useHistory } from 'react-router-dom'
 import { useAuth } from '../assets/contexts/auth'
 import './../assets/css/home.css';
 
-import withStyles from '@material-ui/core/styles/withStyles';
 // Material UI
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // Icons
-
-
-import Paper from '@material-ui/core'
+import Avatar from '@material-ui/core/Avatar';
+import Paper from '@material-ui/core/Paper';
 
 export default function ProfilePage(){
 
@@ -22,38 +21,42 @@ export default function ProfilePage(){
     const[error, setError] = useState("");
     const { currentUser, logout } = useAuth();
     const history = useHistory();
-    
+
     async function handleLogout() {
-        setError("");
+        setError("")
         try {
             await logout();
-            history.push('/signin');
-        }
-        catch {
-            setError("Failed to log out");
-        }
-
-
+            history.push("/signin");
+        } catch {
+            setError("Failed to log out")
+;        }
     }
     return (
         <div className="bg-water">
          
             <ToolBar />
-            <Container>
-                <Row className="ptb-150">
+            <Container 
+
+            >
+                <Row className="ptb-200">
                     <Card 
-                        className="text-center text-white"
+                        className="text-white"
                         bsPrefix="bg-transparent"
                     >
                         <Card.Body>
-                            <h2 className="text-center mb-4"></h2>
-                            {error && <Alert variant ="danger">{error}</Alert>}
-                            <strong>Email: </strong> {currentUser.email}
+                            <Button 
+                                variant="btn btn-danger"
+                                onClick={handleLogout}
+
+                            >
+                                Sign Out
+                           
+                           </Button>
                         </Card.Body>
                     </Card>
                    
                 </Row>
-                <Button variant ="danger" onClick={handleLogout}>Sign Out</Button>
+        
                 
             </Container>
             

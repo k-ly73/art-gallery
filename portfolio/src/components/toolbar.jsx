@@ -6,10 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faMale } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from "../assets/contexts/auth";
 
-export default function ToolBar() { 
+const ToolBar = () => { 
 
     const { currentUser } = useAuth();
     
+    const isLoggedIn = currentUser;
     return (
         <nav className = "navbar navbar-expand-lg fixed-top ">
             <div className = "container-fluid">
@@ -47,10 +48,7 @@ export default function ToolBar() {
 
 
         </nav>
-        
-    
-        
-        
-        
     )
 }
+
+export default ToolBar;
