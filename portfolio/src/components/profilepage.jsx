@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Container, Row, Card, Alert } from 'react-bootstrap'
 import ToolBar from "./toolbar";
+import { porjectFirestore } from '../assets/firebase/firebase';
+
 import { useHistory } from 'react-router-dom'
 import { useAuth } from '../assets/contexts/auth'
 import './../assets/css/home.css';
@@ -18,7 +20,8 @@ export default function ProfilePage(){
     // const handleProfileImage = (e) => {
     //     const image = event.target.files[0];
     // }
-    const[error, setError] = useState("");
+    const [error, setError] = useState("");
+
     const { currentUser, logout } = useAuth();
     const history = useHistory();
 
@@ -36,27 +39,17 @@ export default function ProfilePage(){
          
             <ToolBar />
             <Container 
+                className="ptb-200"
+            >         
+                <Button 
+                    variant="btn btn-danger"
+                    onClick={handleLogout}
 
-            >
-                <Row className="ptb-200">
-                    <Card 
-                        className="text-white"
-                        bsPrefix="bg-transparent"
                     >
-                        <Card.Body>
-                            <Button 
-                                variant="btn btn-danger"
-                                onClick={handleLogout}
+                        Sign Out
+                    
+                    </Button>
 
-                            >
-                                Sign Out
-                           
-                           </Button>
-                        </Card.Body>
-                    </Card>
-                   
-                </Row>
-        
                 
             </Container>
             

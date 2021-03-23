@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Button, Card } from "react-bootstrap"
+import { Link } from 'react-router-dom';
 import '../assets/css/home.css'
 import ToolBar from './toolbar';
 //font awesome icons
@@ -72,16 +73,21 @@ export default function HomePage() {
                 </Row>
             </Container>
             <Container className="ptb-200">
-                            
+                
                 <Row className ="ptb-200" id='info'>
-                    <div className="text-white text-center" bsPrefix="bg-transparent">
-                        <h2>
-                            Ready To Start Your Collection?
-                        </h2>
-                        <p>   
-                              
-                        </p>
-                    </div>
+                    <Col>
+                        <div className="text-white text-center" bsPrefix="bg-transparent">
+                            <h2>
+                                Ready To Start Your Collection?
+                            </h2>
+                            <br/>
+                            <Button variant="btn btn-outline-light" className="w-50"> 
+                                Click to Sign Up  
+                                <Link to="/signup"/>
+                            </Button>
+                        </div>
+                    </Col>
+
                 
                 </Row> 
             </Container>
