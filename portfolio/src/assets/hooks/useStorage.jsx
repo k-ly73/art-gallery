@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { projectStorage, projectFirestore, timestamp } from '../firebase/firebase';
+import { projectStorage, projectFirestore, timeStamp } from '../firebase/firebase';
 import { useAuth } from '../../assets/contexts/auth';
 const useStorage = (file) => {
     const { currentUser } = useAuth();
@@ -19,7 +19,7 @@ const useStorage = (file) => {
         },
         async () => {
             const url = await storageRef.getDownloadURL();
-            const createdAt = timestamp();
+            const createdAt = timeStamp();
             collectionRef.add({ url, createdAt })
             setUrl(url);
         })

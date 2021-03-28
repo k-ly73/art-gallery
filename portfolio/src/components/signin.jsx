@@ -8,6 +8,7 @@ import '../assets/css/form.css'
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const displayNameRef = useRef();
     const { login } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
