@@ -13,7 +13,11 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     function signup(email, password){
-        return auth.createUserWithEmailAndPassword(email, password);
+        return auth.createUserWithEmailAndPassword(email, password).then((authUser) => {
+            authUser.updateProfile({
+                displayName: `${email.match(/^([^@]*)@/)[1]}`,
+            });
+        });
     }
 
     function login(email, password) {
