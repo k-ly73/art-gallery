@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ToolBar from './toolbar'
 import CreatePost from './createpost'
-
+import Post from './post';
 //CSS
 import '../assets/css/dashboard.css'
 
@@ -19,6 +19,7 @@ function DashBoard() {
                 <Row className="ptb-200">
                     <Col>
                         <CreatePost/>
+                        <Post/>
                     </Col>
                     
                 </Row>

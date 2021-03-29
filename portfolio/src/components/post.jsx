@@ -10,7 +10,8 @@ import Avatar from '@material-ui/core/Avatar';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 export default function Post({
-    username, 
+    username,
+    profileURL, 
     photoURL, 
     caption, 
     comments
@@ -19,7 +20,14 @@ export default function Post({
     return (
         <div className="post">
             <div className="post__header">
-                <p>{username}</p>
+                <div className="post__headerLeft">
+                    <img className="post__profilePic" src={profileURL}/>
+                    <p style={{ marginLeft: "8px"}}>{username}</p>
+                </div>
+            </div>
+            <div className="post__center">
+                <img className="post__photoUrl" src={photoURL}/>
+
             </div>
         </div>
     )

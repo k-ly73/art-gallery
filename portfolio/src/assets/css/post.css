@@ -1,3 +1,10 @@
+.post {
+    background-color: white;
+    max-width: 600px;
+    width: 90vw;
+    padding: 16px 24px;
+}
+
 .post__header {
     display: flex;
 }
@@ -5,5 +12,11 @@
     display: flex;
 }
 .post_profilePic{
-    
+    height: 35px;
+    border-radius: 8px;
+}
+.post__photoURL{
+    width: 100%;
+    margin: 16px 0px;
+    object-fit: cover;
 }

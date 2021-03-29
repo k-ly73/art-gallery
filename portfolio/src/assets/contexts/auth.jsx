@@ -16,6 +16,7 @@ export function AuthProvider({ children }) {
         return auth.createUserWithEmailAndPassword(email, password).then((authUser) => {
             authUser.updateProfile({
                 displayName: `${email.match(/^([^@]*)@/)[1]}`,
+                photoURL: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
             });
         });
     }
