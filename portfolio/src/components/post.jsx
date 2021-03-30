@@ -19,25 +19,28 @@ export default function Post({
 
 
     return (
-        <div className="post">
-            <div className="post__header">
-                <div className="post__headerLeft">
-                    <img className="post__profilePic" src={profileURL}/>
-                    <p style={{ marginLeft: "8px"}}>{username}</p>
+        <div>
+            <div className="post">
+                <div className="post__header">
+                    <div className="post__headerLeft">
+                        <img className="post__profilePic" src={profileURL}/>
+                        <p style={{ marginLeft: "8px"}}>{username}</p>
+                    </div>
+                    <button className="post__delete">Delete</button>
                 </div>
-                <button className="post__delete">Delete</button>
-            </div>
-            <div className="post__center">
-                <img className="post__photoURL" src={photoURL}/>
-            </div>
-            <div>
-                <p>
-                    <span style ={{ fontWeight: '500', marginRight: "4px"}}>
-                        {username}
-                    </span>
-                    {caption}
-                </p>
+                <div className="post__center">
+                    <img className="post__photoURL" src={photoURL}/>
+                </div>
+                <div>
+                    <p>
+                        <span style ={{ fontWeight: '500', marginRight: "4px"}}>
+                            {username}
+                        </span>
+                        {caption}
+                    </p>
+                </div>
             </div>
         </div>
+       
     )
 }
