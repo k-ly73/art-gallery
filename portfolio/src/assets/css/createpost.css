@@ -1,39 +1,39 @@
-.post {
+.createPost {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
 }
-.post__imageUpload > input{
+.createPost__imageUpload > input{
     display: none;
 }
 
-.post__caption {
+.createPost__caption {
     border: none;
     width: 100%;
     outline: none;
 }
-.post__caption :focus {
+.createPost__caption :focus {
     outline: none;
 }
-.post__uploadBtn {
+.createPost__uploadBtn {
     border: none;
     background-color: white;
 
 }
 
-.post__bottom {
+.createPost__bottom {
     display: flex;
     justify-content: space-between;
 }
-.post__loggedIn {
+.createPost__loggedIn {
     background-color: white;
     width: 100%;
     max-width: 650px;
     border-radius: 4px;
     padding: 12px 16px;
 }
-.post__avatar {
+.createPost__avatar {
     margin-right: 10px;
 }
 

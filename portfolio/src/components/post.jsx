@@ -17,6 +17,7 @@ export default function Post({
     comments
 }) {
 
+
     return (
         <div className="post">
             <div className="post__header">
@@ -24,10 +25,18 @@ export default function Post({
                     <img className="post__profilePic" src={profileURL}/>
                     <p style={{ marginLeft: "8px"}}>{username}</p>
                 </div>
+                <button className="post__delete">Delete</button>
             </div>
             <div className="post__center">
-                <img className="post__photoUrl" src={photoURL}/>
-
+                <img className="post__photoURL" src={photoURL}/>
+            </div>
+            <div>
+                <p>
+                    <span style ={{ fontWeight: '500', marginRight: "4px"}}>
+                        {username}
+                    </span>
+                    {caption}
+                </p>
             </div>
         </div>
     )

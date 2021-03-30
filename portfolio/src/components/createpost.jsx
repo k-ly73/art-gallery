@@ -42,6 +42,7 @@ function CreatePost() {
                         caption: caption,
                         photoUrl: imageUrl,
                         username: currentUser.email.replace("@gmail.com",""),
+                        profileUrl: currentUser.photoURL,
                     })
                 })
             })
@@ -49,25 +50,25 @@ function CreatePost() {
     }
 
     return (
-        <div className="post">      
-            <div className="post__loggedIn">
+        <div className="createPost">      
+            <div className="createPost__loggedIn">
                 <p>Create Post</p>
-                <div classsName="post__center">
+                <div classsName="createPost__center">
                     <textarea 
                         rows="3" 
-                        className="post__caption"
+                        className="createPost__caption"
                         value={caption}
                         onChange={(e) => setCaption(e.target.value)}
                         placeholder="Type in a Caption"
                     >
 
                     </textarea>
-                    <div className="post__imagePreview">
+                    <div className="createPost__imagePreview">
                         <img id="image-preview" alt=""/>
                     </div>
                 </div>
-                <div className="post__bottom">
-                    <div className="post__imageUpload">
+                <div className="createPost__bottom">
+                    <div className="createPost__imageUpload">
                         <label htmlFor="fileInput">
                             <AddAPhotoIcon style={{cursor:"pointer"}}/>
                         </label>
@@ -79,7 +80,7 @@ function CreatePost() {
                             onChange={handleChange}/>
                     </div>
                     <button 
-                        className="post__uploadBtn"
+                        className="createPost__uploadBtn"
                         onClick={handleUpload}
                         style={{color: caption ? "#000" : "lightgrey"}}
                     >
