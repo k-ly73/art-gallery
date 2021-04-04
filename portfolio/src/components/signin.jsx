@@ -2,13 +2,12 @@ import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Container, Alert, Row, Col } from "react-bootstrap"
 import { useAuth } from "../assets/contexts/auth.jsx"
 import { Link, useHistory } from "react-router-dom"
-
+import ToolBar from './toolbar'
 import '../assets/css/form.css'
 
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const displayNameRef = useRef();
     const { login } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -22,7 +21,7 @@ export default function Login() {
             setError("");
             setLoading(true);
             await login(emailRef.current.value, passwordRef.current.value);
-            history.push("/");
+            history.push("/dashboard");
         } 
         catch {
             setError("Failed to Sign In");
@@ -32,6 +31,7 @@ export default function Login() {
     }
     return (
         <div className ="bg-nature">
+            <ToolBar/>
             <Container 
                 className="d-flex align-items-center justify-content-center"
                 style={{minHeight: "100vh"}}

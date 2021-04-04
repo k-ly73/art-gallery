@@ -8,29 +8,26 @@ import './../assets/css/gallery.css';
 import { motion } from 'framer-motion';
 
 const ImageGrid = ({ setSelectedImg }) => {
+    
+    const [photos, setPhotos] = useState([]);
 
-    const { docs } = useFirestore(`images`);
-    console.log(docs);
-    /*
-        const [photos, setPhotos] = useState([]);
+    //hook for firebase storage
+    useEffect(() => {
+        const imagesRef = projectStorage.ref().child(`postImages/`);
+        imagesRef.listAll().then(result => {
+            result.items.forEach(resultItem => {
+                resultItem.getDownloadURL().then(url => {
+                    setPhotos(oldList => [...oldList, url]);
+                })
+            })
+        })
+    }, []);
 
-        hook for firebase storage
-        useEffect(() => {
-            // const imagesRef = projectStorage.ref().child(`images/${currentUser.email}`);
-            // imagesRef.listAll().then(result => {
-            //     result.items.forEach(resultItem => {
-            //         resultItem.getDownloadURL().then(url => {
-            //             setPhotos(oldList => [...oldList, url]);
-            //         })
-            //     })
-            // })
-        }, [collection]);
-    */
 
     return (
      
         <div className = "img-grid">
-            { docs && docs.map(doc => (
+            {/* { docs && docs.map(doc => (
                 <motion.div 
                     layout
                     whileHover={{ scale: 1.1 }}
@@ -45,16 +42,16 @@ const ImageGrid = ({ setSelectedImg }) => {
                         animate={{ opacity: 1}}
                     />
                 </motion.div>
-            ))}
+            ))} */}
 
-            {/* {photos.map((url, index)=> (
+            {photos.map((url, index)=> (
                 <div 
                     className ="img-wrap"
                     onClick={() => setSelectedImg(url)}
                 > 
                     <img src={url} alt="photos" key={index.toString()}/>
                 </div>
-            ))} */}
+            ))} 
         </div>
    
 

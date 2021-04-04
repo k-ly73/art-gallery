@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 90vw;
     padding: 24px;
 }
 .createPost__imageUpload > input{
@@ -22,9 +23,14 @@
 
 }
 
+.createPost_center {
+    margin: 0px 16px;
+}
 .createPost__bottom {
     display: flex;
     justify-content: space-between;
+    margin: 0px 16px;
+    align-items: center;
 }
 .createPost__loggedIn {
     background-color: white;

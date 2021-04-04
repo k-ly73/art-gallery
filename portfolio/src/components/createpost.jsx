@@ -36,15 +36,24 @@ function CreatePost() {
             }, (error) => {
                 console.log(error);
             }, () => {
-                projectStorage.ref("postImages").child(`${image.name}`)
-                .getDownloadURL().then((imageUrl) => {
+                projectStorage
+                .ref("postImages")
+                .child(`${image.name}`)
+                .getDownloadURL()
+                .then((imageUrl) => {
                     projectFirestore.collection("posts").add({
                         caption: caption,
                         photoUrl: imageUrl,
                         username: currentUser.email.replace("@gmail.com",""),
-                        profileUrl: currentUser.photoURL,
-                    })
-                })
+                        profileUrl: currentUser.photoURL        
+                    });
+                });
+                setCaption("");
+                setProgress(0);
+
+                //gets rid of previewed image after uploading
+                setImage(null); 
+                document.getElementById("image-preview").style.display = "none";
             })
         }
     }

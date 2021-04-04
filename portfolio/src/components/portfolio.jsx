@@ -21,7 +21,6 @@ function PortfolioPage() {
         <div className="ptb-200 bg-library">
             <Container>
                 <ToolBar/>
-                <UploadForm/>
                 <ImageGrid setSelectedImg={setSelectedImg}/>
                 { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>}
 

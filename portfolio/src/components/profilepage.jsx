@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Container, Row, Card, Alert } from 'react-bootstrap'
 import ToolBar from "./toolbar";
-import { porjectFirestore } from '../assets/firebase/firebase';
 
 import { useHistory } from 'react-router-dom'
 import { useAuth } from '../assets/contexts/auth'
@@ -25,30 +24,30 @@ export default function ProfilePage(){
     const { currentUser, logout } = useAuth();
     const history = useHistory();
 
+    const userName = currentUser.email.replace("@gmail.com","");
+    const photoUrl = ""
+
     async function handleLogout() {
         setError("")
         try {
             await logout();
             history.push("/signin");
         } catch {
-            setError("Failed to log out")
-;        }
+            setError("Failed to log out");        }
     }
     return (
-        <div className="bg-water">
+        <div className="gradient-bg ptb-200 text-white">
          
             <ToolBar />
             <Container 
-                className="ptb-200"
-            >         
-                <Button 
-                    variant="btn btn-danger"
-                    onClick={handleLogout}
-
-                    >
-                        Sign Out
-                    
-                    </Button>
+                className="d-flex align-items-center justify-content-center"
+            >   
+                <Row>
+                    <p>
+                        {userName}
+                      
+                    </p>
+                </Row>
 
                 
             </Container>

@@ -21,6 +21,7 @@ const projectFirestore = firebase.firestore();
 
 const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
 
+
 export const signInWithGoogle = () => {
   auth.signInWithPopup(provider);
 };

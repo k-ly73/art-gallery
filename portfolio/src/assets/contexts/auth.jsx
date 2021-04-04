@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase'
 
 const AuthContext = React.createContext();
 
+
 export function useAuth() {
     return useContext(AuthContext);
 }
@@ -13,12 +14,7 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     function signup(email, password){
-        return auth.createUserWithEmailAndPassword(email, password).then((authUser) => {
-            authUser.updateProfile({
-                displayName: `${email.match(/^([^@]*)@/)[1]}`,
-                photoURL: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-            });
-        });
+        return auth.createUserWithEmailAndPassword(email, password);
     }
 
     function login(email, password) {
@@ -36,9 +32,15 @@ export function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user);
-            setLoading(false);
+        const unsubscribe = auth.onAuthStateChanged(function(user){
+            if(user) {
+                setCurrentUser(user);
+                setLoading(false);
+            }
+            else {
+                console.log("User is signed out");
+            }
+
 
         });
         return unsubscribe

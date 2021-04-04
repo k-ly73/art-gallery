@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Container, Alert, Col } from "react-bootstrap"
 import { useAuth } from "../assets/contexts/auth"
-import { signInWithGoogle } from '../assets/firebase/firebase'
 import { Link, useHistory } from "react-router-dom"
+import ToolBar from './toolbar'
 import '../assets/css/form.css'
 
 export default function SignUp() {
@@ -32,6 +32,7 @@ export default function SignUp() {
     }
     return (
         <div className ="bg-nature">
+            <ToolBar/>
             <Container 
                 className="d-flex align-items-center justify-content-center"
                 style={{minHeight: "100vh"}}

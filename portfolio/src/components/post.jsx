@@ -9,37 +9,58 @@ import { Button } from 'react-bootstrap';
 import Avatar from '@material-ui/core/Avatar';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
+//local imports 
+import Comment from './comment';
+
 export default function Post({
     username,
     profileURL, 
-    photoURL, 
-    caption, 
-    comments
+    photoUrl,  
+    comments,
+    caption,
+    id
 }) {
 
+    const deletePost = () => {
 
+        //deleting images from storage
+        var imageRef = projectStorage.refFromURL(photoUrl);
+
+        imageRef.delete().then(function(){
+            console.log("delete successful");
+        }).catch(function(error){
+            console.log(`${error}`)
+        })
+
+        projectFirestore.collection("posts")
+        .doc(id)
+        .delete()
+        .then(function() {
+            console.log("delete post info successful");
+        })
+        .catch(function (error) {
+            console.log(`${error}`);
+        });
+    }
     return (
-        <div>
-            <div className="post">
-                <div className="post__header">
-                    <div className="post__headerLeft">
-                        <img className="post__profilePic" src={profileURL}/>
-                        <p style={{ marginLeft: "8px"}}>{username}</p>
-                    </div>
-                    <button className="post__delete">Delete</button>
+        <div className="post">
+            <div className="post__header">
+                <div className="post__headerLeft">
+                    <img className="post__profilePic" src={profileURL}/>
+                    <p style={{ marginLeft: "8px"}}>{username}</p>
                 </div>
-                <div className="post__center">
-                    <img className="post__photoURL" src={photoURL}/>
-                </div>
-                <div>
-                    <p>
-                        <span style ={{ fontWeight: '500', marginRight: "4px"}}>
-                            {username}
-                        </span>
-                        {caption}
-                    </p>
-                </div>
+                <button onClick={deletePost} className="post__delete">Delete</button>
             </div>
+            <div className="post__center">
+                <img className="post__photoURL" src={photoUrl}/>
+            </div>
+            <div>
+                <strong>{username}</strong> {caption}
+            </div>
+
+
+            {comments ? comments.map((comment) => 
+                <Comment username={comment.username} caption={comment.caption}/>) : <></>}
         </div>
        
     )

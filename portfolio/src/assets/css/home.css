@@ -25,19 +25,29 @@
 
 }
 
-.bg-water {
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url('../../assets/images/water-bg.jpeg');
+.gradient-bg {
+    background: linear-gradient(-180deg,#4158D0, #C850C0, #FFCC70);
+    background-size: 500% 500%;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    min-height: 100vh;
+    animation: gradient 15s ease infinite; 
     width: 100%;
+    position: absolute;
+    background-attachment: fixed;
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+   
 }
 
 .bg-transparent {
