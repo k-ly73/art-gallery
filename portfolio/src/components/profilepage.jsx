@@ -4,7 +4,7 @@ import ToolBar from "./toolbar";
 
 import { useHistory } from 'react-router-dom'
 import { useAuth } from '../assets/contexts/auth'
-import './../assets/css/home.css';
+import './../assets/css/profile.css';
 
 // Material UI
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -36,17 +36,17 @@ export default function ProfilePage(){
             setError("Failed to log out");        }
     }
     return (
-        <div className="gradient-bg ptb-200 text-white">
+        <div className="gradient-bg ptb-200">
          
             <ToolBar />
             <Container 
                 className="d-flex align-items-center justify-content-center"
             >   
                 <Row>
-                    <p>
+                    <div className="profile">
                         {userName}
                       
-                    </p>
+                    </div>
                 </Row>
 
                 

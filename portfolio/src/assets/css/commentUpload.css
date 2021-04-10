@@ -1,0 +1,22 @@
+.commentUpload {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentUpload__textarea {
+    border: none;
+    width: 100%;
+    resize: none;
+    margin: 8px 0px;
+}
+
+
+.commentUpload__textarea:focus {
+    outline: none;
+}
+
+.commentUpload__button {
+    background-color: white;
+    border: none;
+
+}
