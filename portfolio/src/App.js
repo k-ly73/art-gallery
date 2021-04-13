@@ -13,9 +13,18 @@ import { AuthProvider } from './assets/contexts/auth';
 function App() {
 
   return (
-    <div>
-      hello
-    </div>
+    <Router>
+      <AuthProvider>
+        <Switch>
+          <PrivateRoute path="/portfolio" component={PortfolioPage}/>
+          <PrivateRoute path="/dashboard" component={DashBoard}/>
+          <PrivateRoute exact path="/profilepage" component={ProfilePage}/>
+          <Route path="/signup" component={SignUp}/>
+          <Route path="/signin" component={SignIn}/>
+          <Route path="/" component={HomePage}/>
+        </Switch>
+      </AuthProvider>
+    </Router>
   );
   
 } export default App;
