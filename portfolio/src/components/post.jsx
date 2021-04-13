@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useAuth } from '../assets/contexts/auth'
 import '../assets/css/post.css';
-import CreateComment from './createcomment'
 //firebase
-import { projectStorage, projectFirestore, timeStamp } from '../assets/firebase/firebase'
+import { projectStorage, projectFirestore, timeStamp, user } from '../assets/firebase/firebase'
 
 //reactstrap
 import { Button } from 'react-bootstrap';
@@ -58,12 +57,10 @@ export default function Post({
             <div>
                 <strong>{username}</strong> {caption}
             </div>
+
+
             {comments ? comments.map((comment) => 
-                <Comment username={comment.username} caption={comment.comment}/>)
-                : <></>
-            }
-            <CreateComment comments={comments} id={id} />
-            
+                <Comment username={comment.username} caption={comment.caption}/>) : <></>}
         </div>
        
     )

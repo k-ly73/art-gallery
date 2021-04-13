@@ -15,7 +15,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 function DashBoard() {
 
     const [posts, setPosts] = useState([]);
-    const { currentUser } = useAuth();
+
     useEffect(() => {
         projectFirestore.collection("posts").onSnapshot((snapshot) => {
             setPosts(snapshot.docs.map((doc) => ({
@@ -37,13 +37,12 @@ function DashBoard() {
                     <Col>
                         {posts.map(({id, post}) => {
                             return <Post
-                                key={id}
-                                id={id}
-                                profileURL={post.profileURL}
-                                username={post.username}
-                                caption={post.caption}
-                                photoUrl={post.photoUrl}
-                                comments={post.comments}
+                            key={id}
+                            id={id}
+                            profileURL={post.profileURL}
+                            username={post.username}
+                            caption={post.caption}
+                            photoUrl={post.photoUrl}
                             />
                         })}
                     </Col>

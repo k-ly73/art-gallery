@@ -25,6 +25,31 @@
 
 }
 
+.gradient-bg {
+    background: linear-gradient(-180deg,#4158D0, #C850C0, #FFCC70);
+    background-size: 500% 500%;
+    background-repeat: no-repeat;
+    animation: gradient 15s ease infinite; 
+    width: 100%;
+    position: absolute;
+    background-attachment: fixed;
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+   
+}
+
 .bg-transparent {
     background-color: transparent;
 }

@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import '../assets/css/toolbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookOpen, faMale, faColumns, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faMale, faColumns, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useAuth } from "../assets/contexts/auth";
 
@@ -25,18 +25,11 @@ const ToolBar = () => {
     return (
         <nav className = "navbar navbar-expand-lg fixed-top">
             <div className = "container-fluid">
-                {currentUser ?  
-                <a className="navbar-brand" href="/dashboard">
-                    <img src={require("../assets/images/PhotoBum-white.png")}
-                    
-                    />
-                </a> :
                 <a className="navbar-brand" href="/">
                     <img src={require("../assets/images/PhotoBum-white.png")}
                     
                     />
-                </a>}
-
+                </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -83,14 +76,16 @@ const ToolBar = () => {
                         </li>
                     </ul> : 
                     <ul className="navbar-nav ml-auto">
-                        <li className = "nav-item active">
-                            <Link 
-                                to="/profilepage"
-                                className="text-white"
-                            >
-                                <FontAwesomeIcon icon = {faSignInAlt} />
-                                <p>Profile</p>
-                            </Link>
+                        <li>
+                            <Button className="btn btn-primary">
+                                <Link
+                                    to="/signin"
+                                    className="text-white"
+                                >
+                                    Sign In
+                                </Link>
+                            </Button>
+
                         </li>
                     </ul>
                     }
