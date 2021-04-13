@@ -33,8 +33,7 @@ const ToolBar = () => {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarResponsive">
-                    {currentUser ? 
+                <div className="collapse navbar-collapse" id="navbarResponsive"> 
                     <ul className = "navbar-nav ml-auto">
                         <li className = "nav-item active">
                             <Link 
@@ -74,21 +73,8 @@ const ToolBar = () => {
                        
                          
                         </li>
-                    </ul> : 
-                    <ul className="navbar-nav ml-auto">
-                        <li>
-                            <Button className="btn btn-primary">
-                                <Link
-                                    to="/signin"
-                                    className="text-white"
-                                >
-                                    Sign In
-                                </Link>
-                            </Button>
-
-                        </li>
-                    </ul>
-                    }
+                    </ul> 
+                    
                     
                 </div>
             </div>
