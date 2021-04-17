@@ -60,7 +60,7 @@ function CreatePost() {
 
     return (
         <div className="createPost">      
-            <div className="createPost__loggedIn">
+            <div className="createPost__upload">
                 <p>Create Post</p>
                 <div classsName="createPost__center">
                     <textarea 

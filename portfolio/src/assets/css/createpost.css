@@ -32,7 +32,7 @@
     margin: 0px 16px;
     align-items: center;
 }
-.createPost__loggedIn {
+.createPost__upload {
     background-color: white;
     width: 100%;
     max-width: 650px;
